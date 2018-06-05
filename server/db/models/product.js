@@ -23,7 +23,7 @@ const Product = db.define('product', {
       isDecimal: true
     }
   },
-  category: {
+  category: { // mvp for now, maybe a model later.
     type: Sequelize.STRING,
     allowNull: false,
     validate: {

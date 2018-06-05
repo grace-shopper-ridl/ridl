@@ -5,8 +5,9 @@ const Category = db.define('category', {
   type: {
     type: Sequelize.STRING,
     allowNull: false,
+    unique: true,
     validate: {
-      notEmpty: false
+      notEmpty: false,
     }
   }
 });

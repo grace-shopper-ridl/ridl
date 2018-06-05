@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default class AllProducts extends Component {
-  render() {
+const AllProducts = props => {
+
     const dummyProducts = [
       {
         id: 1,
@@ -24,24 +24,33 @@ export default class AllProducts extends Component {
         description: 'These are pecans.',
         price: 27.5,
         inventory: 20
+      },
+      {
+        id: 4,
+        name: 'Pistachios',
+        description: 'These are pistachios.',
+        price: 22.5,
+        inventory: 25
       }
     ];
     const products = dummyProducts;
 
     return (
-      <div>
-        <h1>This is our Products: </h1>
+      <div id="products">
+        <h1 id="products-header">Products: </h1>
         {products.map(product => {
           return (
-            <div key={product.id}>
+            <div key={product.id} className="individual-product" >
               <h3>{product.name}</h3>
               <h4>{product.description}</h4>
-              <p>{product.price}</p>
+              <p>${product.price}</p>
               {product.inventory < 10 && <p>ONLY {product.inventory} LEFT</p>}
             </div>
           );
         })}
       </div>
     );
-  }
+
 }
+
+export default AllProducts

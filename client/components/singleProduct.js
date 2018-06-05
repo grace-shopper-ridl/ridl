@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class SingleProduct extends Compenent {
+import { dummyProducts } from './allProducts';
+
+export default class SingleProduct extends Component {
   render() {
+    console.log(this.props.match.params.productId);
     const singleProduct = {
       id: 1,
       name: 'Peanuts',

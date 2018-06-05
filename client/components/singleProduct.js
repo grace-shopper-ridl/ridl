@@ -5,17 +5,8 @@ import { dummyProducts } from './allProducts';
 
 export default class SingleProduct extends Component {
   render() {
-    console.log(this.props.match.params.productId);
-    const singleProduct = {
-      id: 1,
-      name: 'Peanuts',
-      description: 'These are peanuts.',
-      price: 34.5,
-      inventory: 10,
-      image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg',
-      categories: [],
-      reviews: []
-    };
+    const productId = this.props.match.params.productId;
+    const singleProduct = dummyProducts[+productId - 1];
     return (
       <div id="single-product">
         <h2>{singleProduct.name}</h2>

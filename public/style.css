@@ -32,4 +32,6 @@ form div {
 
 .individual-product {
   width: 33%;
+  display: flex;
+  flex-direction: column;
 }

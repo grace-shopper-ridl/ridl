@@ -2,28 +2,45 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const AllProducts = props => {
-  const products = props.products;
+class AllProducts extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { query: '' };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ query: event.target.value });
+  }
 
-  return (
-    <section id="products">
-      <h1 id="products-header">Products: </h1>
-      {products.map(product => {
-        return (
-          <div key={product.id} className="individual-product">
-            <Link to={`/products/${product.id}`}>
-              <h3>{product.name}</h3>
-            </Link>
-            <h4>{product.description}</h4>
-            <img src={product.image} />
-            <p>${product.price}</p>
-            {product.inventory < 10 && <p>ONLY {product.inventory} LEFT</p>}
-          </div>
-        );
-      })}
-    </section>
-  );
-};
+  render() {
+    const products = this.props.products;
+    return (
+      <section id="products">
+        <input
+          name="query"
+          type="text"
+          placeholder="Search Product by Name"
+          value={this.state.query}
+          onChange={this.handleChange}
+        />
+        <h1 id="products-header">Products: </h1>
+        {products.map(product => {
+          return (
+            <div key={product.id} className="individual-product">
+              <Link to={`/products/${product.id}`}>
+                <h3>{product.name}</h3>
+              </Link>
+              <h4>{product.description}</h4>
+              <img src={product.image} />
+              <p>${product.price}</p>
+              {product.inventory < 10 && <p>ONLY {product.inventory} LEFT</p>}
+            </div>
+          );
+        })}
+      </section>
+    );
+  }
+}
 
 const mapStateToProps = state => {
   return {

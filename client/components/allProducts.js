@@ -14,6 +14,9 @@ class AllProducts extends Component {
 
   render() {
     const products = this.props.products;
+    let { query } = this.state;
+    query = query.toLowerCase();
+
     return (
       <section id="products">
         <input
@@ -24,19 +27,21 @@ class AllProducts extends Component {
           onChange={this.handleChange}
         />
         <h1 id="products-header">Products: </h1>
-        {products.map(product => {
-          return (
-            <div key={product.id} className="individual-product">
-              <Link to={`/products/${product.id}`}>
-                <h3>{product.name}</h3>
-              </Link>
-              <h4>{product.description}</h4>
-              <img src={product.image} />
-              <p>${product.price}</p>
-              {product.inventory < 10 && <p>ONLY {product.inventory} LEFT</p>}
-            </div>
-          );
-        })}
+        {products
+          .filter(product => product.name.toLowerCase().includes(query))
+          .map(product => {
+            return (
+              <div key={product.id} className="individual-product">
+                <Link to={`/products/${product.id}`}>
+                  <h3>{product.name}</h3>
+                </Link>
+                <h4>{product.description}</h4>
+                <img src={product.image} />
+                <p>${product.price}</p>
+                {product.inventory < 10 && <p>ONLY {product.inventory} LEFT</p>}
+              </div>
+            );
+          })}
       </section>
     );
   }

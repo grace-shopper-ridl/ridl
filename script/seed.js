@@ -1,6 +1,6 @@
 'use strict';
 
-const { db } = require('../server/db');
+const db = require('../server/db');
 const { User, Product } = require('../server/db/models');
 
 /**

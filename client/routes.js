@@ -9,7 +9,7 @@ import {
   AllProducts,
   SingleProduct
 } from './components';
-import { me } from './store';
+import { me, fetchProducts } from './store';
 
 /**
  * COMPONENT
@@ -57,6 +57,7 @@ const mapDispatch = dispatch => {
   return {
     loadInitialData() {
       dispatch(me());
+      dispatch(fetchProducts());
     }
   };
 };

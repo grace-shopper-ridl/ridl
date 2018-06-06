@@ -1,41 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+export const dummyProducts = [
+  {
+    id: 1,
+    name: 'Peanuts',
+    description: 'These are peanuts.',
+    price: 34.5,
+    inventory: 10,
+    image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
+  },
+  {
+    id: 2,
+    name: 'Cashews',
+    description: 'These are cashews.',
+    price: 32.5,
+    inventory: 1,
+    image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
+  },
+  {
+    id: 3,
+    name: 'Pecans',
+    description: 'These are pecans.',
+    price: 27.5,
+    inventory: 20,
+    image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
+  },
+  {
+    id: 4,
+    name: 'Pistachios',
+    description: 'These are pistachios.',
+    price: 22.5,
+    inventory: 25,
+    image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
+  }
+];
 
 const AllProducts = props => {
-  const dummyProducts = [
-    {
-      id: 1,
-      name: 'Peanuts',
-      description: 'These are peanuts.',
-      price: 34.5,
-      inventory: 10,
-      image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
-    },
-    {
-      id: 2,
-      name: 'Cashews',
-      description: 'These are cashews.',
-      price: 32.5,
-      inventory: 1,
-      image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
-    },
-    {
-      id: 3,
-      name: 'Pecans',
-      description: 'These are pecans.',
-      price: 27.5,
-      inventory: 20,
-      image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
-    },
-    {
-      id: 4,
-      name: 'Pistachios',
-      description: 'These are pistachios.',
-      price: 22.5,
-      inventory: 25,
-      image: 'https://nuts.com/images/auto/801x534/assets/1a8f816738ffc617.jpg'
-    }
-  ];
   const products = dummyProducts;
 
   return (
@@ -44,7 +46,9 @@ const AllProducts = props => {
       {products.map(product => {
         return (
           <div key={product.id} className="individual-product">
-            <h3>{product.name}</h3>
+            <Link to={`/products/${product.id}`}>
+              <h3>{product.name}</h3>
+            </Link>
             <h4>{product.description}</h4>
             <img src={product.image} />
             <p>${product.price}</p>

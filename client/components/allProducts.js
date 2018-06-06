@@ -38,7 +38,7 @@ export const dummyProducts = [
 ];
 
 const AllProducts = props => {
-  const products = dummyProducts;
+  const products = props.products;
 
   return (
     <section id="products">
@@ -60,4 +60,10 @@ const AllProducts = props => {
   );
 };
 
-export default AllProducts;
+const mapStateToProps = state => {
+  return {
+    products: state.products
+  };
+};
+
+export default connect(mapStateToProps)(AllProducts);

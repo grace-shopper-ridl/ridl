@@ -1,4 +1,5 @@
-const { expect } = require('chai');
+const chai = require('chai');
+const { expect } = chai;
 const db = require('../index');
 const Product = db.model('product');
 
@@ -15,7 +16,7 @@ describe('Product model', () => {
       inventory: 20
     })
     .then(peanut => {
-      expect(peanut).should.be.an('object');
+      expect(peanut).to.be.an('object');
     })
     .catch(console.error);
   })

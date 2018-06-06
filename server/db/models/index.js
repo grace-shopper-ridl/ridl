@@ -15,7 +15,6 @@ Product.hasMany(Review);
 Review.belongsTo(User);
 User.hasMany(Review);
 
-
 // Products Model methods
 // getCategories, setCategories, addCategories, addCategories
 // getReviews, setReviews, createReview, addReview, addReviews, removeReview, removeReviews, hasReview, hasReviews, and countReviews
@@ -33,5 +32,6 @@ User.hasMany(Review);
 module.exports = {
   User,
   Product,
-  Category
+  Category,
+  Review
 };

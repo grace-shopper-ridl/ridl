@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentProduct } from '../store';
 
-// import { dummyProducts } from './allProducts';
-
 class SingleProduct extends Component {
   componentDidMount() {
     this.props.setCurrentProduct(this.props.match.params.productId);

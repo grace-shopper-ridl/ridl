@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchCurrentProduct } from '../store';
 
-import { dummyProducts } from './allProducts';
+class SingleProduct extends Component {
+  componentDidMount() {
+    this.props.setCurrentProduct(this.props.match.params.productId);
+  }
 
-export default class SingleProduct extends Component {
   render() {
-    const productId = this.props.match.params.productId;
-    const singleProduct = dummyProducts[+productId - 1];
+    const singleProduct = this.props.currentProduct;
     return (
       <div id="single-product">
         <h2>{singleProduct.name}</h2>
@@ -17,3 +19,18 @@ export default class SingleProduct extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  currentProduct: state.currentProduct
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentProduct: productId => {
+    dispatch(fetchCurrentProduct(productId));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SingleProduct);

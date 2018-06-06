@@ -32,5 +32,6 @@ User.hasMany(Review);
 module.exports = {
   User,
   Product,
-  Category
+  Category,
+  Review
 };

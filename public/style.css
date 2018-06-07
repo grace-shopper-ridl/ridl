@@ -35,3 +35,26 @@ form div {
   display: flex;
   flex-direction: column;
 }
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5em;
+}
+
+.review > h4 {
+  color: turquoise;
+}
+
+.stars {
+  display: flex;
+}
+
+.stars > img {
+  height: 5vh;
+}

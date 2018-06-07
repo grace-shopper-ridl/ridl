@@ -29,4 +29,25 @@ router.get('/:orderId', (req, res, next) => {
     .catch(next);
 });
 
+// POST /orders
+router.post('/', (req, res, next) => {
+  // expecting orderId to be on the req body
+  Order.findById(req.body.orderId, {
+    include: [
+      {
+        model: LineItem,
+        include: [Product]
+      }
+    ]
+  })
+    .then(order => {
+      if (!order || order.status !== 'cart') {
+        return Order.create();
+      }
+      return order;
+    })
+    .then(order => res.send(order))
+    .catch(next);
+});
+
 module.exports = router;

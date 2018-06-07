@@ -15,4 +15,18 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
+//GET /orders/:orderId
+router.get('/:orderId', (req, res, next) => {
+  Order.findById(req.params.orderId, {
+    include: [
+      {
+        model: LineItem,
+        include: [Product]
+      }
+    ]
+  })
+    .then(orders => res.json(orders))
+    .catch(next);
+});
+
 module.exports = router;

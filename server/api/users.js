@@ -1,6 +1,6 @@
-const router = require('express').Router()
-const {User} = require('../db/models')
-module.exports = router
+const router = require('express').Router();
+const { User, Order } = require('../db/models');
+module.exports = router;
 
 router.get('/', (req, res, next) => {
   User.findAll({
@@ -10,5 +10,16 @@ router.get('/', (req, res, next) => {
     attributes: ['id', 'email']
   })
     .then(users => res.json(users))
-    .catch(next)
-})
+    .catch(next);
+});
+
+// GET /api/users/:userId/cart
+router.get('/:userId/cart', (req, res, next) => {
+  Order.getCartByUser(req.params.userId)
+    .then(order => {
+      if (!order) return Order.create();
+      return order;
+    })
+    .then(order => res.send(order))
+    .catch(next);
+});

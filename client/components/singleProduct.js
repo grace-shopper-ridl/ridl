@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentProduct } from '../store';
+import Ratings from './rating'
 
 const dummyReviews = [
   {
@@ -56,7 +57,9 @@ class SingleProduct extends Component {
           <div key={review.id} className="review">
             <h4>{review.title}</h4>
             <p>{review.description}</p>
-            {/*THIS WOULD BE A RATING COMPONENT WITH RATING AS PROPS*/}
+            <p>Rating:</p>
+            <Ratings rating={review.rating} />
+
           </div>
         ))}
         </section>

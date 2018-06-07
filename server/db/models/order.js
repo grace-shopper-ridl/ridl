@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
+const Product = require('./product');
+const LineItem = require('./lineItem');
 
 const Order = db.define('order', {
   orderNumber: {
@@ -20,5 +22,18 @@ const Order = db.define('order', {
     type: Sequelize.DECIMAL
   }
 });
+
+Order.getCartByUser = function(userId) {
+  return Order.findOne({
+    where: {
+      userId,
+      status: 'cart'
+    },
+    include: {
+      model: LineItem,
+      include: [Product]
+    }
+  });
+};
 
 module.exports = Order;

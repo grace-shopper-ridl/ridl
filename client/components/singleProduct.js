@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentProduct } from '../store';
-import Ratings from './rating'
+import Ratings from './rating';
+import { addItem } from '../store';
 
 const dummyReviews = [
   {

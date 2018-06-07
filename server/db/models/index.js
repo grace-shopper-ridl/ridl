@@ -31,8 +31,13 @@ User.hasMany(Review);
 // User Model methods
 // getReviews, setReviews, createReview, addReview, addReviews, removeReview, removeReviews, hasReview, hasReviews, and countReviews
 
+// Product to line-item relationship
 Product.hasMany(LineItem);
 LineItem.belongsTo(Product);
+
+// Order to line-item relationship
+Order.hasMany(LineItem);
+LineItem.belongsTo(Order);
 
 module.exports = {
   User,

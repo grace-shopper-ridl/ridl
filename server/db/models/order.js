@@ -8,9 +8,11 @@ const Order = db.define('order', {
   status: {
     type: Sequelize.ENUM('created', 'processing', 'cancelled', 'completed'),
     defaultValue: 'created'
+  },
+  // eventually we want to be able to calculate the subtotal from qty and price in lineitem model
+  subTotal: {
+    type: Sequelize.DECIMAL
   }
 });
-
-Order.prototype.total = function() {};
 
 module.exports = Order;

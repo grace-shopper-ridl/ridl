@@ -51,7 +51,7 @@ router.post('/', (req, res, next) => {
 });
 
 // POST /orders/:orderId/listItems
-router.post('/:orderId/listItems', (req, res, next) => {
+router.post('/:orderId/lineItems', (req, res, next) => {
   Order.findById(req.params.orderId)
     .then(order => {
       LineItem.create(req.body).then(lineItem => {

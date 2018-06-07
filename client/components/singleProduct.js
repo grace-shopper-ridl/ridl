@@ -51,6 +51,7 @@ class SingleProduct extends Component {
         <p>${singleProduct.price}</p>
         <img src={singleProduct.image} />
         <h4>{singleProduct.description}</h4>
+        <button type="button">Add to Cart</button>
         <h3>REVIEWS:</h3>
         <section id="reviews">
         {reviews.map(review => (
@@ -59,7 +60,6 @@ class SingleProduct extends Component {
             <p>{review.description}</p>
             <p>Rating:</p>
             <Ratings rating={review.rating} />
-
           </div>
         ))}
         </section>

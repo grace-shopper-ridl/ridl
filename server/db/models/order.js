@@ -6,8 +6,14 @@ const Order = db.define('order', {
     type: Sequelize.INTEGER
   },
   status: {
-    type: Sequelize.ENUM('created', 'processing', 'cancelled', 'completed'),
-    defaultValue: 'created'
+    type: Sequelize.ENUM(
+      'cart',
+      'created',
+      'processing',
+      'cancelled',
+      'completed'
+    ),
+    defaultValue: 'cart'
   },
   // eventually we want to be able to calculate the subtotal from qty and price in lineitem model
   subTotal: {

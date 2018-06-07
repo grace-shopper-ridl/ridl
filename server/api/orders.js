@@ -50,4 +50,16 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+// POST /orders/:orderId/listItems
+router.post('/:orderId/listItems', (req, res, next) => {
+  Order.findById(req.params.orderId)
+    .then(order => {
+      LineItem.create(req.body).then(lineItem => {
+        lineItem.setOrder(order);
+        res.send(lineItem);
+      });
+    })
+    .catch(next);
+});
+
 module.exports = router;

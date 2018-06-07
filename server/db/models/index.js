@@ -2,6 +2,8 @@ const User = require('./user');
 const Product = require('./product');
 const Category = require('./category');
 const Review = require('./review');
+const Order = require('./order');
+const LineItem = require('./lineItem');
 
 // Product-category relationship
 Product.belongsToMany(Category, { through: 'ProductCategory' });
@@ -29,9 +31,19 @@ User.hasMany(Review);
 // User Model methods
 // getReviews, setReviews, createReview, addReview, addReviews, removeReview, removeReviews, hasReview, hasReviews, and countReviews
 
+// Product to line-item relationship
+Product.hasMany(LineItem);
+LineItem.belongsTo(Product);
+
+// Order to line-item relationship
+Order.hasMany(LineItem);
+LineItem.belongsTo(Order);
+
 module.exports = {
   User,
   Product,
   Category,
-  Review
+  Review,
+  Order,
+  LineItem
 };

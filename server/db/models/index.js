@@ -39,6 +39,10 @@ LineItem.belongsTo(Product);
 Order.hasMany(LineItem);
 LineItem.belongsTo(Order);
 
+// Order to users relationship
+User.hasMany(Order);
+Order.belongsTo(User);
+
 module.exports = {
   User,
   Product,

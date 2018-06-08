@@ -80,4 +80,31 @@ router.put('/:orderId/lineItems/:lineItemId', (req, res, next) => {
     .catch(next);
 });
 
+// DELETE /orders/:orderId/lineItems/:lineItemId
+router.delete('/:orderId/lineItems/:lineItemId', (req, res, next) => {
+  let forbidden;
+  LineItem.findById(req.params.lineItemId)
+    .then(item => {
+      return item.getOrder().then(order => {
+        if (req.user.id !== order.userId || order.status !== 'cart') {
+          forbidden = { status: 403, message: 'FORBIDDEN' };
+        } else {
+          return item.destroy();
+        }
+      });
+    })
+    .then(() => {
+      return LineItem.findAll({
+        where: {
+          orderId: req.params.orderId
+        }
+      });
+    })
+    .then(lineItems => {
+      if (forbidden) res.status(403).json(forbidden);
+      else res.json(lineItems);
+    })
+    .catch(next);
+});
+
 module.exports = router;

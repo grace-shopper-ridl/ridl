@@ -36,4 +36,12 @@ Order.getCartByUser = function(userId) {
   });
 };
 
+Order.prototype.getTotal = function() {
+  let total = 0;
+  return this.getLineItems().then(lineItems => {
+    lineItems.forEach(lineItem => (total += lineItem.price));
+    return total;
+  });
+};
+
 module.exports = Order;

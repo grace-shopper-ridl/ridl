@@ -1,7 +1,7 @@
 'use strict';
 
 const db = require('../server/db');
-const { User, Product } = require('../server/db/models');
+const { User, Product, LineItem, Order } = require('../server/db/models');
 
 /**
  * Welcome to the seed file! This seed file uses a newer language feature called...
@@ -330,6 +330,15 @@ async function seed() {
   const products = await Promise.all(
     productData.map(product => Product.create(product))
   );
+
+  // some testing for getTotal order method
+  const lineItem = await LineItem.create({ price: 100 });
+  const lineItem1 = await LineItem.create({ price: 200 });
+  const order = await Order.create();
+  await lineItem.setOrder(order);
+  await lineItem1.setOrder(order);
+  const price = await order.getTotal();
+  console.log('price: ', price);
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
 

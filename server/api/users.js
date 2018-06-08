@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
 router.get('/:userId/cart', (req, res, next) => {
   Order.getCartByUser(req.params.userId)
     .then(order => {
-      if (!order) return Order.create();
+      if (!order) return Order.create({ userId: req.params.userId });
       return order;
     })
     .then(order => res.send(order))

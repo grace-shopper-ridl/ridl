@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrentProduct } from '../store';
-import Ratings from './rating'
+import Ratings from './rating';
+import {
+  fetchCurrentProduct,
+  addItemThunk,
+  changeItemQuantityThunk
+} from '../store';
 
 const dummyReviews = [
   {
@@ -44,6 +48,7 @@ class SingleProduct extends Component {
 
   render() {
     const singleProduct = this.props.currentProduct;
+    const cart = this.props.cart;
     const reviews = dummyReviews;
     return (
       <div id="single-product">
@@ -51,17 +56,32 @@ class SingleProduct extends Component {
         <p>${singleProduct.price}</p>
         <img src={singleProduct.image} />
         <h4>{singleProduct.description}</h4>
+        {this.props.isLoggedIn && (
+          <button
+            type="button"
+            onClick={() => {
+              this.props.addItemToCart(
+                cart.lineItems,
+                cart.id,
+                singleProduct.id,
+                singleProduct.price,
+                1
+              );
+            }}
+          >
+            Add to Cart
+          </button>
+        )}
         <h3>REVIEWS:</h3>
         <section id="reviews">
-        {reviews.map(review => (
-          <div key={review.id} className="review">
-            <h4>{review.title}</h4>
-            <p>{review.description}</p>
-            <p>Rating:</p>
-            <Ratings rating={review.rating} />
-
-          </div>
-        ))}
+          {reviews.map(review => (
+            <div key={review.id} className="review">
+              <h4>{review.title}</h4>
+              <p>{review.description}</p>
+              <p>Rating:</p>
+              <Ratings rating={review.rating} />
+            </div>
+          ))}
         </section>
       </div>
     );
@@ -69,12 +89,27 @@ class SingleProduct extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentProduct: state.currentProduct
+  currentProduct: state.currentProduct,
+  cart: state.cart,
+  isLoggedIn: !!state.user.id
 });
 
 const mapDispatchToProps = dispatch => ({
   setCurrentProduct: productId => {
     dispatch(fetchCurrentProduct(productId));
+  },
+  addItemToCart: (lineItems, orderId, productId, price, qty) => {
+    let alreadyExistingLineItem = lineItems.find(
+      element => element.productId === productId
+    );
+    if (!alreadyExistingLineItem) {dispatch(addItemThunk(orderId, productId, price, qty));}
+    else {dispatch(
+        changeItemQuantityThunk(
+          orderId,
+          alreadyExistingLineItem.id,
+          alreadyExistingLineItem.qty + 1
+        )
+      );}
   }
 });
 

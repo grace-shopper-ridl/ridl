@@ -5,8 +5,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import user from './user';
 import products from './allProducts';
 import currentProduct from './currentProduct';
+import cart from './cart'
 
-const reducer = combineReducers({ user, products, currentProduct });
+const reducer = combineReducers({ user, products, currentProduct, cart });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
 );
@@ -16,3 +17,4 @@ export default store;
 export * from './user';
 export * from './allProducts';
 export * from './currentProduct';
+export * from './cart';

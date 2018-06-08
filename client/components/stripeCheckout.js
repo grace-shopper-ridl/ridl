@@ -4,8 +4,8 @@ import axios from 'axios';
 
 export default class Checkout extends React.Component {
   onToken = token => {
-    console.log(token);
-    axios.post('/stripe-token', token);
+    axios.put('/stripe-token', token);
+    // change the current order(cart) in our database from cart to created
   };
 
   render() {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentProduct } from '../store';
 import Ratings from './rating';
-import { addItem } from '../store';
+import { addItemThunk } from '../store';
 
 const dummyReviews = [
   {
@@ -45,6 +45,7 @@ class SingleProduct extends Component {
 
   render() {
     const singleProduct = this.props.currentProduct;
+    const cart = this.props.cart
     const reviews = dummyReviews;
     return (
       <div id="single-product">
@@ -52,7 +53,7 @@ class SingleProduct extends Component {
         <p>${singleProduct.price}</p>
         <img src={singleProduct.image} />
         <h4>{singleProduct.description}</h4>
-        <button type="button">Add to Cart</button>
+        <button type="button" onClick={() => {this.props.addItemToCart(cart.id, singleProduct.id, singleProduct.price, 1)}} >Add to Cart</button>
         <h3>REVIEWS:</h3>
         <section id="reviews">
         {reviews.map(review => (
@@ -70,12 +71,16 @@ class SingleProduct extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentProduct: state.currentProduct
+  currentProduct: state.currentProduct,
+  cart: state.cart
 });
 
 const mapDispatchToProps = dispatch => ({
   setCurrentProduct: productId => {
     dispatch(fetchCurrentProduct(productId));
+  },
+  addItemToCart: (orderId, productId, price, qty) => {
+    dispatch(addItemThunk(orderId, productId, price, qty))
   }
 });
 

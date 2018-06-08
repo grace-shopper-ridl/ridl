@@ -23,9 +23,9 @@ export const getCartThunk = userId => dispatch => {
     .catch(err => console.log(err));
 }
 
-export const addItemThunk = (orderId, productId) => dispatch => {
+export const addItemThunk = (orderId, productId, price, qty) => dispatch => {
   axios
-    .post(`/api/orders/${orderId}/lineItems`, { productId }) // PLACEHOLDER This route will depend on backend implementation
+    .post(`/api/orders/${orderId}/lineItems`, { productId, price, qty }) // PLACEHOLDER This route will depend on backend implementation
     .then(res => res.data)
     .then(newLineItem => dispatch(addItem(newLineItem)))
     .catch(err => console.log(err));

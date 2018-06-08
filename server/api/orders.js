@@ -86,9 +86,6 @@ router.delete('/:orderId/lineItems/:lineItemId', (req, res, next) => {
   LineItem.findById(req.params.lineItemId)
     .then(item => {
       return item.getOrder().then(order => {
-        console.log(req.user.id);
-        console.log(order.status);
-        console.log(order.userId);
         if (req.user.id !== order.userId || order.status !== 'cart') {
           forbidden = { status: 403, message: 'FORBIDDEN' };
         } else {

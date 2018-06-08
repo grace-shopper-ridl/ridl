@@ -16,9 +16,10 @@ const changeItemQuantity = allItemsUpdated => ({ type: CHANGE_ITEM_QUANTITY, all
 
 export const getCartThunk = userId => dispatch => {
   axios
-    .get(`/api/users/${userId}/cart/`) // PLACEHOLDER This route will depend on backend implementation
+    .get(`/api/users/${userId}/cart`) // PLACEHOLDER This route will depend on backend implementation
     .then(res => res.data)
-    .then(cart => dispatch(getCart(cart)))
+    .then(cart =>
+      dispatch(getCart(cart)))
     .catch(err => console.log(err));
 }
 
@@ -56,7 +57,7 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_CART:
-      return { orderId: state.cart.id, lineItems: state.cart.lineItems };
+      return {id: action.cart.id, lineItems: action.cart.lineItems || []};
     case ADD_ITEM:
       return { ...state, lineItems: [...state.lineItems, action.item] };
     case REMOVE_ITEM:

@@ -62,4 +62,22 @@ router.post('/:orderId/lineItems', (req, res, next) => {
     .catch(next);
 });
 
+// PUT /orders/:orderId/lineItems/:lineItemId
+router.put('/:orderId/lineItems/:lineItemId', (req, res, next) => {
+  LineItem.update(req.body, {
+    where: { id: req.params.lineItemId },
+    returning: true,
+    plain: true
+  })
+    .then(() => {
+      return LineItem.findAll({
+        where: {
+          orderId: req.params.orderId
+        }
+      });
+    })
+    .then(lineItems => res.send(lineItems))
+    .catch(next);
+});
+
 module.exports = router;

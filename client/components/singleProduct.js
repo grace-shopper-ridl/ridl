@@ -102,10 +102,6 @@ const mapDispatchToProps = dispatch => ({
     let alreadyExistingLineItem = lineItems.find(
       element => element.productId === productId
     );
-    console.log(
-      'THIS IS OUR ALREADY EXISTING ITEM>>>',
-      alreadyExistingLineItem
-    );
     if (!alreadyExistingLineItem) {dispatch(addItemThunk(orderId, productId, price, qty));}
     else {dispatch(
         changeItemQuantityThunk(

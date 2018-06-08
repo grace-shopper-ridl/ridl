@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Ratings from './rating';
-import {fetchCurrentProduct, addItemThunk, changeItemQuantityThunk } from '../store';
+import {
+  fetchCurrentProduct,
+  addItemThunk,
+  changeItemQuantityThunk
+} from '../store';
 
 const dummyReviews = [
   {
@@ -52,20 +56,22 @@ class SingleProduct extends Component {
         <p>${singleProduct.price}</p>
         <img src={singleProduct.image} />
         <h4>{singleProduct.description}</h4>
-        <button
-          type="button"
-          onClick={() => {
-            this.props.addItemToCart(
-              cart.lineItems,
-              cart.id,
-              singleProduct.id,
-              singleProduct.price,
-              1
-            );
-          }}
-        >
-          Add to Cart
-        </button>
+        {this.props.isLoggedIn && (
+          <button
+            type="button"
+            onClick={() => {
+              this.props.addItemToCart(
+                cart.lineItems,
+                cart.id,
+                singleProduct.id,
+                singleProduct.price,
+                1
+              );
+            }}
+          >
+            Add to Cart
+          </button>
+        )}
         <h3>REVIEWS:</h3>
         <section id="reviews">
           {reviews.map(review => (
@@ -84,7 +90,8 @@ class SingleProduct extends Component {
 
 const mapStateToProps = state => ({
   currentProduct: state.currentProduct,
-  cart: state.cart
+  cart: state.cart,
+  isLoggedIn: !!state.user.id
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -92,10 +99,21 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchCurrentProduct(productId));
   },
   addItemToCart: (lineItems, orderId, productId, price, qty) => {
-    let alreadyExistingLineItem = lineItems.find((element) => element.productId === productId)
-    console.log('THIS IS OUR ALREADY EXISTING ITEM>>>', alreadyExistingLineItem)
-    if (!alreadyExistingLineItem) dispatch(addItemThunk(orderId, productId, price, qty));
-    else dispatch(changeItemQuantityThunk(orderId, alreadyExistingLineItem.id, alreadyExistingLineItem.qty + 1))
+    let alreadyExistingLineItem = lineItems.find(
+      element => element.productId === productId
+    );
+    console.log(
+      'THIS IS OUR ALREADY EXISTING ITEM>>>',
+      alreadyExistingLineItem
+    );
+    if (!alreadyExistingLineItem) {dispatch(addItemThunk(orderId, productId, price, qty));}
+    else {dispatch(
+        changeItemQuantityThunk(
+          orderId,
+          alreadyExistingLineItem.id,
+          alreadyExistingLineItem.qty + 1
+        )
+      );}
   }
 });
 

@@ -39,9 +39,9 @@ export const removeItemThunk = (orderId, lineItemId) => dispatch => {
     .catch(err => console.log(err));
 };
 
-export const changeItemQuantityThunk = (orderId, lineItemId, quantity) => dispatch => {
+export const changeItemQuantityThunk = (orderId, lineItemId, qty) => dispatch => {
   axios
-    .put(`/api/orders/${orderId}/lineItems/${lineItemId}`, { quantity }) // PLACEHOLDER This route will depend on backend implementation
+    .put(`/api/orders/${orderId}/lineItems/${lineItemId}`, { qty }) // PLACEHOLDER This route will depend on backend implementation
     .then(res => res.data)
     .then(allItemsUpdated => dispatch(changeItemQuantity(allItemsUpdated)))
     .catch(err => console.log(err));

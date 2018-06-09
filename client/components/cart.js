@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { changeItemQuantityThunk } from '../store';
 
 const Cart = props => {
-  const cartId = props.cart.id;
-  const changeQty = props.changeQty;
   return (
     <section id="cart">
       {props.cart.lineItems.length &&

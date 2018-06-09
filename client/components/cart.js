@@ -13,7 +13,14 @@ const Cart = props => {
             <img src={lineItem.product.image} />
             <p>${lineItem.price}</p>
             <label>
-              Quantity: <input type="number" placeholder={lineItem.qty} />
+              Quantity:{' '}
+              <input
+                type="number"
+                value={lineItem.qty}
+                onChange={evt =>
+                  props.changeQty(props.cart.id, lineItem.id, evt.target.value)
+                }
+              />
             </label>
           </div>
         ))}

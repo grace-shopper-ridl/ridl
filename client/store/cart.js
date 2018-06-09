@@ -19,7 +19,7 @@ const changeItemQuantity = allItemsUpdated => ({
   type: CHANGE_ITEM_QUANTITY,
   allItemsUpdated
 });
-const removeCart = () => ({ type: REMOVE_CART });
+export const removeCart = () => ({ type: REMOVE_CART });
 
 // THUNK
 

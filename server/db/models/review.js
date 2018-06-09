@@ -5,9 +5,6 @@ const Review = db.define('review', {
 	title: {
 		type: Sequelize.STRING,
 		allowNull: false,
-		validate: {
-			notEmpty: false,
-		}
 	},
 	rating: {
 		type: Sequelize.INTEGER,
@@ -19,11 +16,11 @@ const Review = db.define('review', {
 		}
 	},
 	description: {
-		type: Sequelize.STRING,
+		type: Sequelize.TEXT,
 		allowNull: false,
 		validate: {
 			notEmpty: false,
-			len: [25, 200]
+			len: [1, 700]
 		}
 	}
 });

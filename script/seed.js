@@ -1,9 +1,10 @@
 'use strict';
 
 const db = require('../server/db');
-const { User, Product, Category } = require('../server/db/models');
+const { User, Product, Category, Review } = require('../server/db/models');
 const productData = require('./products.json')
 const categoryData = require('./categories.json')
+const reviewData = require('./reviews.json')
 
 async function seed() {
   await db.sync({ force: true });
@@ -18,7 +19,7 @@ async function seed() {
     categoryData.map(category => Category.create(category))
   );
 
-// this helper function matches the category in our seed data
+// This helper function matches the category in our seed data
 // with a category we just created
 const findMatchingCategory = categoryInJson => {
   return categories.find(categoryInDb => {
@@ -31,21 +32,40 @@ const findMatchingCategory = categoryInJson => {
   // and add that category to the product
   const products = await Promise.all(
     productData.map(async product => {
-      const createdProduct = await Product.create(product)
+      const createdProduct = await Product.create(product);
       if (product.hasOwnProperty('categories')){
         await Promise.all(
           product.categories.map(async categoryInJson => {
-            const matchingCategoryInDb = findMatchingCategory(categoryInJson)
-            await createdProduct.addCategory(matchingCategoryInDb)
+            const matchingCategoryInDb = findMatchingCategory(categoryInJson);
+            await createdProduct.addCategory(matchingCategoryInDb);
           })
         )
       }
+      return createdProduct;
+    })
+  );
+
+  // Given an array of items, select an item randomly and return the item id
+  const getRandomId = arrayOfItems => {
+    const randomIndex = Math.floor(Math.random() * arrayOfItems.length);
+    return arrayOfItems[randomIndex].dataValues.id
+  }
+
+  // Each review is associated with a random user and random product
+  const reviews = await Promise.all(
+    reviewData.map(async review => {
+      const randomUser = getRandomId(users);
+      const randomProduct = getRandomId(products);
+      review.userId = randomUser;
+      review.productId = randomProduct;
+      await Review.create(review);
     })
   );
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded ${products.length} products`);
   console.log(`seeded ${categories.length} categories`);
+  console.log(`seeded ${reviews.length} reviews`);
   console.log(`seeded successfully`);
 }
 

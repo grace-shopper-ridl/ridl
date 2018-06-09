@@ -5,7 +5,7 @@ import axios from 'axios';
 
 class Checkout extends React.Component {
   onToken = token => {
-    axios.post(`/api/orders/${this.props.cart.id}/checkout`, token);
+    axios.post(`/api/orders/${this.props.cart.id}/checkout`, {token, amount: this.props.subtotal});
     // change the current order(cart) in our database from cart to created
   };
 

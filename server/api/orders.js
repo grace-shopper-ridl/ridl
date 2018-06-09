@@ -73,7 +73,7 @@ router.put('/:orderId/lineItems/:lineItemId', (req, res, next) => {
         where: {
           orderId: req.params.orderId
         },
-        include: [Product]
+        include: [{model: Product}]
       });
     })
     .then(lineItems => res.send(lineItems))
@@ -97,7 +97,8 @@ router.delete('/:orderId/lineItems/:lineItemId', (req, res, next) => {
       return LineItem.findAll({
         where: {
           orderId: req.params.orderId
-        }
+        },
+        include: { model: Product }
       });
     })
     .then(lineItems => {

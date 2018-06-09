@@ -29,7 +29,6 @@ export const getCartThunk = userId => dispatch => {
     .then(res => res.data)
     .then(cart => {
       dispatch(getCart(cart));
-      history.push('/home')
     })
     .catch(err => console.log(err));
 };

@@ -1,10 +1,12 @@
 import axios from 'axios';
+import history from '../history'
 
 // ACTION TYPES
 const GET_CART = 'GET_CART';
 const ADD_ITEM = 'ADD_ITEM';
 const REMOVE_ITEM = 'REMOVE_ITEM';
 const CHANGE_ITEM_QUANTITY = 'CHANGE_ITEM_QUANTITY';
+const REMOVE_CART = 'REMOVE_CART';
 
 // ACTION CREATOR
 const getCart = cart => ({ type: GET_CART, cart });
@@ -17,6 +19,7 @@ const changeItemQuantity = allItemsUpdated => ({
   type: CHANGE_ITEM_QUANTITY,
   allItemsUpdated
 });
+const removeCart = () => ({ type: REMOVE_CART });
 
 // THUNK
 
@@ -24,7 +27,10 @@ export const getCartThunk = userId => dispatch => {
   axios
     .get(`/api/users/${userId}/cart`) // PLACEHOLDER This route will depend on backend implementation
     .then(res => res.data)
-    .then(cart => dispatch(getCart(cart)))
+    .then(cart => {
+      dispatch(getCart(cart));
+      history.push('/home')
+    })
     .catch(err => console.log(err));
 };
 
@@ -49,11 +55,13 @@ export const changeItemQuantityThunk = (
   lineItemId,
   qty
 ) => dispatch => {
-  if (qty) {axios
+  if (qty) {
+    axios
       .put(`/api/orders/${orderId}/lineItems/${lineItemId}`, { qty }) // PLACEHOLDER This route will depend on backend implementation
       .then(res => res.data)
       .then(allItemsUpdated => dispatch(changeItemQuantity(allItemsUpdated)))
-      .catch(err => console.log(err));}
+      .catch(err => console.log(err));
+  }
 };
 
 // REDUCER
@@ -73,6 +81,8 @@ export default function(state = initialState, action) {
       return { ...state, lineItems: action.allItemsMinusDeleted };
     case CHANGE_ITEM_QUANTITY:
       return { ...state, lineItems: action.allItemsUpdated };
+    case REMOVE_CART:
+      return initialState;
     default:
       return state;
   }

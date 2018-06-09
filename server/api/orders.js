@@ -51,23 +51,15 @@ router.post('/', (req, res, next) => {
 });
 
 router.post('/:orderId/checkout', (req, res, next) => {
-  if (req.body) {
-    Order.findById(req.params.orderId)
-      .then(order => {
-        let total = 0;
-        order.getLineItems()
-          .then(lineItems => {
-            lineItems.forEach(lineItem => {
-              if (!lineItem.qty) total += lineItem.price;
-              else total += lineItem.price * lineItem.qty;
-            });
-          })
-          .then(() => {
-            return order.update(
-              { status: 'created', subTotal: total },
-              { returning: true, plain: true }
-            )});
-      })
+  if (req.body.token) {
+    Order.update(
+      { status: 'created', subTotal: req.body.amount },
+      {
+        where: { id: req.params.orderId },
+        returning: true,
+        plain: true
+      }
+    )
       .then(order => res.json(order))
       .catch(next);
   } else {

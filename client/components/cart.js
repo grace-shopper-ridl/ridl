@@ -7,7 +7,10 @@ const Cart = props => {
       <section id="cart">
         {props.cart.lineItems.map(lineItem => (
             <div key={lineItem.id} className="lineItem" >
-                <h2>{lineItem.product.name}</h2>
+                <h3>{lineItem.product.name}</h3>
+                <img src={lineItem.product.image} />
+                <p>${lineItem.price}</p>
+                <p>Quantity: {lineItem.qty}</p>
             </div>
     ))}
       </section>
@@ -26,4 +29,4 @@ const mapDispatchToProps = dispatch => ({
 
 const ConnectedCart = connect(mapStateToProps, mapDispatchToProps)(Cart);
 
-export default Cart
+export default ConnectedCart

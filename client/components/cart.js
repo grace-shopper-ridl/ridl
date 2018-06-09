@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { changeItemQuantityThunk, removeItemThunk } from '../store';
 import Checkout from './stripeCheckout';
+import Price from './price';
 
 const Cart = props => {
   return (
@@ -11,7 +12,7 @@ const Cart = props => {
           <div key={lineItem.id} className="lineItem">
             <h3>{lineItem.product.name}</h3>
             <img src={lineItem.product.image} />
-            <p>${lineItem.price}</p>
+            <Price product={lineItem.product} />
             <label>
               Quantity:{' '}
               <input

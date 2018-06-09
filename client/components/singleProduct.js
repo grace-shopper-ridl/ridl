@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Ratings from './rating';
+import Price from './price';
 import {
   fetchCurrentProduct,
   addItemThunk,
@@ -53,7 +54,7 @@ class SingleProduct extends Component {
     return (
       <div id="single-product">
         <h2>{singleProduct.name}</h2>
-        <p>${singleProduct.price}</p>
+        <Price product={singleProduct} />
         <img src={singleProduct.image} />
         <h4>{singleProduct.description}</h4>
         {this.props.isLoggedIn && (
@@ -102,14 +103,17 @@ const mapDispatchToProps = dispatch => ({
     let alreadyExistingLineItem = lineItems.find(
       element => element.productId === productId
     );
-    if (!alreadyExistingLineItem) {dispatch(addItemThunk(orderId, productId, price, qty));}
-    else {dispatch(
+    if (!alreadyExistingLineItem) {
+      dispatch(addItemThunk(orderId, productId, price, qty));
+    } else {
+      dispatch(
         changeItemQuantityThunk(
           orderId,
           alreadyExistingLineItem.id,
           alreadyExistingLineItem.qty + 1
         )
-      );}
+      );
+    }
   }
 });
 

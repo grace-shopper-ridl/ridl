@@ -17,6 +17,7 @@ const Cart = props => {
               <input
                 type="number"
                 value={lineItem.qty}
+                min="1"
                 onChange={evt =>
                   props.changeQty(props.cart.id, lineItem.id, evt.target.value)
                 }

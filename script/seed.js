@@ -14,38 +14,38 @@ async function seed() {
     User.create({ email: 'murphy@email.com', password: '123' })
   ]);
 
-	const categories = await Promise.all(
-		categoryData.map(category => Category.create(category))
-	);
+  const categories = await Promise.all(
+    categoryData.map(category => Category.create(category))
+  );
 
 // this helper function matches the category in our seed data
 // with a category we just created
 const findMatchingCategory = categoryInJson => {
-	return categories.find(categoryInDb => {
-		return categoryInDb.type === categoryInJson.type
-	})
+  return categories.find(categoryInDb => {
+    return categoryInDb.type === categoryInJson.type
+  })
 };
 
-	// For each product, loop through the 'categories' array,
-	// find the matching category from the categories we just created,
-	// and add that category to the product
+  // For each product, loop through the 'categories' array,
+  // find the matching category from the categories we just created,
+  // and add that category to the product
   const products = await Promise.all(
     productData.map(async product => {
-			const createdProduct = await Product.create(product)
-			if (product.hasOwnProperty('categories')){
-				await Promise.all(
-					product.categories.map(async categoryInJson => {
-						const matchingCategoryInDb = findMatchingCategory(categoryInJson)
-						await createdProduct.addCategory(matchingCategoryInDb)
-					})
-				)
-			}
-		})
-	);
+      const createdProduct = await Product.create(product)
+      if (product.hasOwnProperty('categories')){
+        await Promise.all(
+          product.categories.map(async categoryInJson => {
+            const matchingCategoryInDb = findMatchingCategory(categoryInJson)
+            await createdProduct.addCategory(matchingCategoryInDb)
+          })
+        )
+      }
+    })
+  );
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded ${products.length} products`);
-	console.log(`seeded ${categories.length} categories`);
+  console.log(`seeded ${categories.length} categories`);
   console.log(`seeded successfully`);
 }
 

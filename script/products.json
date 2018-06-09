@@ -1,0 +1,918 @@
+[
+  {
+    "name": "Jackson-Triggs Sauvignon Blanc Bag in Box",
+    "price": 4195,
+    "inventory": 10112,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour with a lively nose of gooseberry and lemon; fruit character is replayed on the palate; crisp and dry, with light / medium body. Serving suggestion: As a summer sipper, with assorted salads including asparagus and goat cheese, lemon sole.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/270942/images/full.jpeg",
+		"categories": [
+			{ "type": "Sauvignon Blanc" },
+			{ "type": "White Wine" }
+		]
+  },
+  {
+    "name": "Peller Estates French Cross Red Bag in Box",
+    "price": 3595,
+    "inventory": 8843,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Medium ruby colour; gentle berry and plum aromas; medium-bodied with berry/cherry flavours. Serving suggestion: Veal chops, veal, pasta dishes.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/589069/images/full.jpeg",
+		"categories": [
+			{ "type": "Blend" },
+			{ "type": "Red Wine" }
+		]
+  },
+  {
+    "name": "Peller Estates French Cross Dry White Bag in Box",
+    "price": 3795,
+    "inventory": 8646,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale yellow straw; Cooked pear and yellow apple aroma; slightly off-dry with soft round fruit flavours and light tropical fruit notes; easy drinking wine.. Serving suggestion: Serve chilled as an Apperitif; with mild cheeses; finger foods; turkey wraps with honey mustard dressing..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/589051/images/full.jpeg",
+		"categories": [
+			{ "type": "Blend" },
+			{ "type": "White Wine" }
+		]
+  },
+  {
+    "name": "Peller Estates French Cross Pinot Grigio Bag in Box",
+    "price": 4295,
+    "inventory": 8356,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: A dry, light-bodied white wine with refreshing pear and citrus flavours. Serving suggestion: Gournet poutine and appetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/669465/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Jackson-Triggs Pinot Grigio Bag in Box",
+    "price": 4195,
+    "inventory": 7445,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: From an award-winning winery comes this light and lively pinot grigio, offered in a range of sizes for all occasions. Pouring a pale lemon colour, look for aromas and flavours of apples and citrus, mainly lemon. Bright acidity makes this crisp and extra-dry on that palate with a clean finish.. Serving suggestion: An excellent partner for salads, white fish and appetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/270959/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Colio Extra Dry White Bag in Box",
+    "price": 3395,
+    "inventory": 6850,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale yellow colour; fruity/floral aromas with citrus notes that carry onto the palate; crisp, dry finish. Serving suggestion: Aperitif; raw shellfish.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/306019/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Carlo Rossi California Red",
+    "price": 2795,
+    "inventory": 8451,
+    "description": "Origin: USA, Region Not Specified. Tasting note: Pale ruby colour; mildly fruity nose displaying mild currant and berry fruit; light, crisp berry flavours. Serving suggestion: Picnic fare; grilled calamari.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/280644/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Oyster Bay Sauvignon Blanc",
+    "price": 1695,
+    "inventory": 33077,
+    "description":
+      "Origin: New Zealand, Marlborough. Tasting note: Popular Oyster Bay hails from the Marlborough region, ground zero for classic New Zealand Sauvignon Blanc. Expect notes of expressive lime, passion fruit, kiwi fruit and fresh-cut grass. Pair with sea scallops pan-fried in butter with asparagus on the side.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/316570/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Kim Crawford Sauvignon Blanc",
+    "price": 1995,
+    "inventory": 32101,
+    "description":
+      "Origin: New Zealand, Marlborough. Tasting note: This sets the benchmark for New Zealand's intensely flavourful style of Sauvignon Blanc: think gooseberry, pea pods and passion fruit. Vivid and refreshing, it pairs well with steamed clams or mussels with asparagus risotto, or grilled chicken.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/35386/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Jackson-Triggs Cabernet Sauvignon Bag in Box",
+    "price": 4495,
+    "inventory": 5945,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Light to medium ruby garnet colour; dry and medium bodied with lively crisp cassis berry character and very light tannins.. Serving suggestion: Serve with grilled meats, cheeses and savoury appetizers.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/270884/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Jackson-Triggs Merlot Bag in Box",
+    "price": 4495,
+    "inventory": 5721,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: The smoothness of merlot is allowed to shine in this single varietal expression. Starts with bright ruby colour, followed by aromas of blackberry, mocha and ripe plums. The fruit flavours resonate on the palate, which is dry and soft with a pleasing finish.. Serving suggestion: The dark and smooth flavours of this wine are an ideal match with barbecue fare..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/270892/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Merlot" } ]
+  },
+  {
+    "name": "Colio Dry White",
+    "price": 3395,
+    "inventory": 5403,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; delicate lemon/lime nose; dry and crisp on the palate with a clean finish. Serving suggestion: Serve chilled with finger foods, fish or on its own.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/306001/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Bodacious Smooth Red Bag in Box",
+    "price": 4195,
+    "inventory": 5317,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Medium ruby in colour; aromas of sweet black cherry, strawberry and candied fruit; off-dry with the same flavours as detected on the nose.. Serving suggestion: This would be wonderful with gooey ribs or aged cheeses..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/432732/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": null } ]
+  },
+  {
+    "name": "J. Lohr Seven Oaks Cabernet Sauvignon",
+    "price": 2395,
+    "inventory": 27455,
+    "description":
+      "Origin: USA, California. Tasting note: There's a reason this Cab is the most popular red in the VINTAGES Essentials Collection. It's full bodied and packed with black cherry, blackcurrant, cedar, vanilla and spice. Equally at home with a casual steak sandwich or a thick rib-eye steak.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/656561/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Jackson-Triggs Shiraz Bag in Box",
+    "price": 4495,
+    "inventory": 4861,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Deep purple/ruby colour;  soft fruity aromas of plums, cherries, and blackberries; dry, medium body, easy drinking style. Serving suggestion: Assorted deli sandwiches, grilled chicken.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/270934/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Shiraz/Syrah" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Cabernet Merlot Bag in Box",
+    "price": 4295,
+    "inventory": 4831,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Medium ruby colour; aromas of raspberry, cherry, spice and vanilla; dry and medium bodied with flavours of red fruit, spice and oak.. Serving suggestion: A good partner for pizzas and pastas..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/589036/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Santa Margherita Pinot Grigio",
+    "price": 1995,
+    "inventory": 25690,
+    "description":
+      "Origin: Italy, Alto Adige/Trentino. Tasting note: VINTAGES releases thousands of wines each year, and this is consistently a top seller. It put Pinot Grigio on the map with its refreshing green apple, peach and citrus notes. A favourite with a plate of antipasti, grilled chicken or seafood salad.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/106450/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Jackson-Triggs Merlot",
+    "price": 1695,
+    "inventory": 12757,
+    "description": "Origin: Canada, Ontario. Tasting note: The smoothness of merlot is allowed to shine in this single varietal expression. Starts with bright ruby colour, followed by aromas of blackberry, mocha and ripe plums. The fruit flavours resonate on the palate, which is dry and soft with a pleasing finish.. Serving suggestion: The dark and smooth flavours of this wine are an ideal match with barbecue fare..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/377820/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Merlot" } ]
+  },
+  {
+    "name": "Santa Carolina Chardonnay",
+    "price": 1525,
+    "inventory": 12748,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Light lemon colour; Vanilla, slightly tropical aromas and flavours with subdued apple notes; Dry, medium-bodied, with well balanced acidiy and a tangy lemon finish. Serving suggestion: Light seafood; pasta salads; southern fried chicken; veal..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/322727/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay" } ]
+  },
+  {
+    "name": "XOXO Pinot Grigio / Chardonnay Bag in Box",
+    "price": 3995,
+    "inventory": 4778,
+    "description": "Origin: Canada, Ontario. Tasting note: Bright pale straw with greenish highlights; light aromas of quince, tree fruit, spice and minerals; dry, with light / medium body and balanced acidity; flavours of green plums, toffee mineral; for drinking now.. Serving suggestion: Serve with grilled shrimps, chicken or pasta in light cream sauce.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/430017/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "L'Ambiance White",
+    "price": 3445,
+    "inventory": 4711,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw; delicate nose with hints of apple and lemon; soft, easy drinking, slightly off-dry. Serving suggestion: Asian cuisine, spicy seafood dishes.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/207860/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Santa Carolina Cabernet Merlot",
+    "price": 1525,
+    "inventory": 12470,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Garnet red colour; aromas of cassis and black raspberries; medium-full bodied with ripe fruit flavour and light cedar spice on the finish.. Serving suggestion: Roasted or bbq meats; rack of lamb; pork loin.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/447466/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet/Merlot" } ]
+  },
+  {
+    "name": "J.P. Wiser's Deluxe",
+    "price": 4145,
+    "inventory": 16268,
+    "description": "Origin: Canada, Ontario. Tasting note: In the mid-1800's JP Wiser set out to create a whisky that pleased the nose, tongue and eye, the result is this bright golden whisky that offers aromas of sweet caramel, dried fruit, and vanilla; the palate is rich with flavours of toasted grain, sweet corn meal and vanilla followed by a smooth/creamy finish.. Serving suggestion: Mix in cocktail or on the rocks..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/216689/images/full.jpeg",
+    "categories": [ { "type": "Whisky/Whiskey" }, { "type": "Canada" } ]
+  },
+  {
+    "name": "Jackson-Triggs Pinot Grigio",
+    "price": 1895,
+    "inventory": 12290,
+    "description": "Origin: Canada, Ontario. Tasting note: From an award-winning winery comes this light and lively pinot grigio, offered in a range of sizes for all occasions. Pouring a pale lemon colour, look for aromas and flavours of apples and citrus, mainly lemon. Bright acidity makes this crisp and extra-dry on that palate with a clean finish.. Serving suggestion: An excellent partner for salads, white fish and appetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/22327/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "L'Ambiance Red",
+    "price": 3445,
+    "inventory": 4596,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Ruby red; red berry aromas with slight gamey notes; red raspberry flavours; crisp, dry finish. Serving suggestion: Poultry; lamb; veal; grilled fish.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/207852/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Fantini Farnese Sangiovese IGT",
+    "price": 1475,
+    "inventory": 12237,
+    "description": "Origin: Italy, Puglia. Tasting note: Deep ruby colour; leather, cherry, cranberry, tobacco and earth aromas; dry, medium-bodied, with velvety texture and ripe cherry flavours.. Serving suggestion: Serve with veal parmiggiana, pizza, tomato-based pasta or hard, aged cheese..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/31971/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Sangiovese" } ]
+  },
+  {
+    "name": "Apothic Red",
+    "price": 1390,
+    "inventory": 24122,
+    "description": "Origin: USA, California. Tasting note: Ruby colour; aromas include plum, blackberry, spice notes, raspberry and vanilla; medium body; layers of ripe fruit and vanilla flavours with a long finish. Serving suggestion: Versatile blend will work well with barbecued ribs or sausages; aged cheeses.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/234369/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Jackson-Triggs Sauvignon Blanc",
+    "price": 1895,
+    "inventory": 11900,
+    "description":
+      "Origin: Canada, Region Not Specified. Serving suggestion: As a summer sipper, with assorted salads including asparagus and goat cheese, lemon sole. Tasting note: Pale straw; floral \u0026 grassy aromas; dry, light-body, with gooseberry and citrus flavours \u0026 finish.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/399428/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Folonari Pinot Grigio",
+    "price": 2445,
+    "inventory": 11818,
+    "description": "Origin: Italy, Veneto. Tasting note: Made in stainless steel tanks to preserve and accentuate its fresh character. Pale lemon colour, with aromas of citrus, clove and light floral notes. Juicy on the palate with more fresh fruit flavours balanced by bright acidity and hints of white pepper that lead to a clean finish.. Serving suggestion: While the refreshing nature of pinot grigio is perfect for enjoying on its own, it also makes a great partner to shellfish, seafood, chicken, salads and antipasto..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/621821/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "J.P. Wiser's Deluxe Whisky",
+    "price": 6145,
+    "inventory": 10122,
+    "description": "Origin: Canada, Ontario. Tasting note: In the mid-1800's JP Wiser set out to create a whisky that pleased the nose, tongue and eye, the result is this bright golden whisky that offers aromas of sweet caramel, dried fruit, and vanilla; the palate is rich with flavours of toasted grain, sweet corn meal and vanilla followed by a smooth/creamy finish.. Serving suggestion: Mix in cocktail or on the rocks..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/33928/images/full.jpeg",
+    "categories": [ { "type": "Whisky/Whiskey" }, { "type": "Canada" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Rose Bag in Box",
+    "price": 3795,
+    "inventory": 4355,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Light pink/salmon colour; floral, strawberry and tea aromas; off-dry palate with ripe fruit and soft acidity with a rounded finish.. Serving suggestion: Serve with light lunches, ham or appetizers.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/589028/images/full.jpeg",
+    "categories": [ { "type": "Rose Wine" }, { "type": "Rose" } ]
+  },
+  {
+    "name": "Cono Sur Tocornal Sauvignon Blanc",
+    "price": 1525,
+    "inventory": 11448,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Medium-straw colour; floral aromas with notes of pear and herbs; spicy, mildly oaky, pink grapefruit flavours with a slightly off-dry finish. Serving suggestion: Grilled poultry, shellfish.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/306472/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Wolf Blass Yellow Label Cabernet Sauvignon",
+    "price": 1420,
+    "inventory": 22107,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Deep red purple colour; dry and full bodied; mulberry/cassis fruit aromas with pronounced eucalyptus, spice and oak; balanced with soft tannins and a long, fruity finish.. Serving suggestion: Rack of lamb, grilled or roasted red meats, hard cheese..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/251876/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Chardonnay Bag in Box",
+    "price": 4295,
+    "inventory": 4104,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: This wine pours a pale lemon colour followed by inviting aromas of apple, white citrus and a hint of oak. The palate is dry and light in body with resonating flavours and a refreshing streak of acidity that makes this an excellent food partner.. Serving suggestion: Refreshing acidity makes this an excellent food partner. Try it with creamy pasta dishes, poultry or pork..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/297119/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay" } ]
+  },
+  {
+    "name": "Sawmill Creek Dry White",
+    "price": 3695,
+    "inventory": 4029,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; aromas of citrus and apple; dry, light-bodied, crisp lemon and pear fruit flavours, with notes of peach and yellow apple.. Serving suggestion: Serve with pasta salad..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/68577/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Yellow Tail Chardonnay",
+    "price": 1875,
+    "inventory": 10685,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Deep yellow; Aromas of butterscotch, vanilla and baked apple fruit; Dry, medium to full bodied, with tropical notes, apple, pear fruit flavours; Medium length on crisp finish.. Serving suggestion: Fish dishes; Seafood; Poultry..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/20321/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay" } ]
+  },
+  {
+    "name": "Domaine D'Or White",
+    "price": 3395,
+    "inventory": 3938,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: pale straw colour; subtle lemon aroma and flavour, soft dry finish. Serving suggestion: serve as an aperitif with finger foods.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/106179/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Hochtaler",
+    "price": 3395,
+    "inventory": 3903,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; mild aromas of apple, pear and flowers that carry onto the palate; off-dry finish. Serving suggestion: White meat; poultry; mild cheeses.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/80788/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Folonari Pinot Grigio",
+    "price": 1420,
+    "inventory": 20799,
+    "description": "Origin: Italy, Veneto. Tasting note: Made in stainless steel tanks to preserve and accentuate its fresh character. Pale lemon colour, with aromas of citrus, clove and light floral notes. Juicy on the palate with more fresh fruit flavours balanced by bright acidity and hints of white pepper that lead to a clean finish.. Serving suggestion: While the refreshing nature of pinot grigio is perfect for enjoying on its own, it also makes a great partner to shellfish, seafood, chicken, salads and antipasto..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/229542/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Sawmill Creek Pinot Grigio Chardonnay Bag in Box",
+    "price": 4095,
+    "inventory": 3899,
+    "description": "Origin: Canada, Ontario. Tasting note: A refreshing blend of pinot grigio and chardonnay provide great drinking pleasure in an easy to serve format. Pale straw yellow colour. Delicate aromas of pear, melon and apple with light citrus and vanilla notes. On the palate, it is dry, light and fresh in style, with soft acidity, and flavours of apple, pear and lemon.. Serving suggestion: Enjoy well chilled on its own as a crowd pleaser or pair with white meat and poultry dishes and salads..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/247007/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Naked Grape Pinot Grigio Bag in Box",
+    "price": 4195,
+    "inventory": 3882,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Brilliant pale straw colour; delicate aromas of citrus, pineapple and baked apples with mineral nuances; dry and medium-bodied with crisp acidity; flavours of apples, pears, citrus and melon.. Serving suggestion: Serve well-chilled with shrimp cocktail, chicken, fresh seafood and vegetarian lasagna..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/432724/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Sawmill Creek Dry Red Bag in Box",
+    "price": 3695,
+    "inventory": 3873,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Deep ruby colour with a garnet hue; aromas of raspberry, cranberry and cherry; dry, light to medium-bodied, soft and fruity, with light tannins and red fruit flavours.. Serving suggestion: Serve with pizza..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/68544/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Two Oceans Sauvignon Blanc",
+    "price": 1875,
+    "inventory": 10319,
+    "description": "Origin: South Africa, Region Not Specified. Tasting note: Pale straw colour; gooseberry, herbaceous, grassy, pink grapefruit \u0026 fresh lemon aromas; dry, light-medium bodied, easy drinking with soft lingering citrus \u0026 gooseberry flavours.. Serving suggestion: Asparagus omelet, lemon chicken, vegetable stir fry, light fish dishes..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/413070/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Oyster Bay Chardonnay",
+    "price": 1995,
+    "inventory": 20575,
+    "description":
+      "Origin: New Zealand, Marlborough. Tasting note: A real crowd-pleasing Chardonnay that shows there's more to New Zealand than Sauvignon Blanc. Apple, melon, lemon and well-handled oak - a model for trendy cool-climate Chard. Oysters are an obvious match, but try with sauteed fish or grilled pork chops.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/326728/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay" } ]
+  },
+  {
+    "name": "Mcmanis Cabernet Sauvignon",
+    "price": 1995,
+    "inventory": 20506,
+    "description":
+      "Origin: USA, California. Tasting note: With an attractive nose of ripe black fruit, cassis, vanilla and woodsmoke, this generous and easygoing crowd-pleaser is ideal for gatherings of all kinds. It will shine equally well with finger foods or with grilled steaks, gourmet burgers or grilled ribs.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/212126/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Brights House White",
+    "price": 3295,
+    "inventory": 3832,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; subtle, green apple/mineral aromas; medium-bodied with grapey/green apple flavours. Serving suggestion: Aperitif; pork roast; grilled chicken.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/396804/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Fantini Farnese Montepulciano Dabruzzo",
+    "price": 1475,
+    "inventory": 10105,
+    "description": "Origin: Italy, Abruzzo. Tasting note: Blackberry, cedar and mild spice aromas; ripe, mouth filling black cherry/berry fruit.. Serving suggestion: Hearty stews, crown roast, spicy pasta.Pizzaor BBQ fare..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/512335/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Montepulciano" } ]
+  },
+  {
+    "name": "Oggi Botter Pinot Grigio",
+    "price": 925,
+    "inventory": 20156,
+    "description": "Origin: Italy, Region Not Specified. Tasting note: pale straw colour; floral, citrus and green apple aromas; dry, light body; crisp citrus finish. Serving suggestion: serve as an aperitif with finger foods.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/86199/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Gato Negro Cabernet Sauvignon",
+    "price": 1525,
+    "inventory": 10031,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Garnet red with browning edge; Sweet blackberry jam, mint and leather aromas; Dry, light-medium body, soft fruit and soft tannin; mature dry wine with fruity, moderate  finish.. Serving suggestion: Tex/Mex. Dishes; BBQ meats; Poultry..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/280719/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "L'Epayrie Blanc",
+    "price": 1460,
+    "inventory": 9887,
+    "description": "Origin: France, Region Not Specified. Tasting note: Clean, simple and ready to enjoy, this L'Epayrie white is a timeless, uncomplicated customer favourite. The pale yellow colour is followed by light fruit aromas and flavours of apple and pear. Light in body with a soft, clean finish.. Serving suggestion: An excellent choice for larger gatherings, sipping or serving with a variety of mild cheeses..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/109017/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Jackson-Triggs Vidal Bag in Box",
+    "price": 3695,
+    "inventory": 3701,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Aromas of delicate pear, nectarine, and lemon notes with a touch of honey. Tasty with a green salad or grilled vegetables.. Serving suggestion: As an aperitif, with light appetizers, seafood salads, shrimp cocktail.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/275099/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Vidal" } ]
+  },
+  {
+    "name": "Villa Maria Private Bin Sauvignon Blanc Marlborough",
+    "price": 1520,
+    "inventory": 19412,
+    "description": "Origin: New Zealand, Marlborough. Tasting note: Pale straw colour; intense aromas of gooseberry, lime, grass and asparagus; dry, medium bodied, crisp acidity, and flavours of bell pepper, gooseberry citrus; clean, crisp finish.. Serving suggestion: Goat cheese dishes, fish, vegetarian fare or herb roasted poultry.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/426601/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Jacob's Creek Moscato",
+    "price": 1330,
+    "inventory": 19384,
+    "description": "Origin: Australia, South Australia. Tasting note: Since 1847, Jacob's Creek has been one of the leading wineries in Australia's Barossa Valley. This aromatic and lightly bubbly wine is brimming with ripe grape, lychee, tropical fruit, floral and citrus aromas. Sweet and easy-drinking, with citrus, peach and tropical fruit flavours. Pour with fruit salad or light desserts.. Serving suggestion: Serve with fruit salad, light desserts or spicy appetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/265157/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Moscato" } ]
+  },
+  {
+    "name": "Bodacious Smooth Red",
+    "price": 1895,
+    "inventory": 9630,
+    "description": "Origin: Canada, Ontario. Tasting note: Medium ruby in colour; aromas of sweet black cherry, strawberry and candied fruit; off-dry with the same flavours as detected on the nose.. Serving suggestion: This would be wonderful with gooey ribs or aged cheeses..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/387159/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Shiraz/Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Dry White Tetra",
+    "price": 1045,
+    "inventory": 14299,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale yellow straw; Cooked pear and yellow apple aroma; slightly off-dry with soft round fruit flavours and light tropical fruit notes; easy drinking wine.. Serving suggestion: Serve chilled as an Apperitif; with mild cheeses; finger foods; turkey wraps with honey mustard dressing..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/63313/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Yellow Tail Shiraz",
+    "price": 1230,
+    "inventory": 19045,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Dark ruby purple; blackberry, red liquorice, vanilla bean and plum aromas; dry, full-bodied, softly structured with flavours of plum, ripe berry and a sweet fruit centre; long spicy finish.. Serving suggestion: BBQ fare and beef dishes..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/624544/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Shiraz/Syrah" } ]
+  },
+  {
+    "name": "Lindemans Bin 85 Pinot Grigio",
+    "price": 985,
+    "inventory": 18933,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Pale straw colour; soft, fresh pear fruit aromas; dry, medium bodied, fresh and flavourful, rounded palate, balanced acidity on finish.. Serving suggestion: Shrimp in garlic butter, pasta con alio e olio and light apetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/668947/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Red Knot Shiraz",
+    "price": 1814,
+    "inventory": 18867,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Deep ruby/garnet in colour; black cherry, vanilla and spicy oak aromas; dry, full bodied; berry and spice flavours and balanced acidity with soft lingering tannins in medium length finish.. Serving suggestion: serve with bbq ribs or steak.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/619395/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Shiraz/Syrah" } ]
+  },
+  {
+    "name": "Cono Sur Tocornal Cabernet Sauvignon Shiraz",
+    "price": 1425,
+    "inventory": 9388,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Plum purple concentrated centre; aromas of lilac, coffee \u0026 blackberry; elderberry dry fruit at mid palate with soft tannins on the finish.. Serving suggestion: Serve with lamb or rare beef..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/620674/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Peller Estates Sauvignon Blanc French Cross Bag in Box",
+    "price": 4295,
+    "inventory": 3478,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: A crisp, easy drinking white in an easy to serve box. In the glass, it's a pale, lemon green colour. On the nose the wine exhibits, forward aromas of grapefruit, herb, lemon and melon with light tropical, pear and grassy notes. The palate is dry, light-bodied and crisp with light peach, apple, melon and citrus flavours.. Serving suggestion: Serve lightly chilled on its own or paired with light seafood, salads, crudites, creamy pasta with asparagus spears, or herbed fish, chicken or pork dishes..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/623322/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Wild Vines Strawberry White Zinfandel",
+    "price": 1395,
+    "inventory": 9258,
+    "description": "Origin: USA, Region Not Specified. Tasting note: Salmon pink in colour; fragrant notes of strawberry, vanilla and a hint of citrus on the nose; it is effervescent and refreshing on the medium sweet palate.. Serving suggestion: Serve with jerk chicken..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/557553/images/full.jpeg",
+    "categories": [ { "type": "Specialty Wines" }, { "type": "Flavoured Wine" } ]
+  },
+  {
+    "name": "Jackson-Triggs Cabernet Sauvignon",
+    "price": 1895,
+    "inventory": 9200,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Light to medium ruby garnet colour; dry and medium bodied with lively crisp cassis berry character and very light tannins.. Serving suggestion: Serve with grilled meats, cheeses and savoury appetizers.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/331025/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Jackson-Triggs Sauvignon Blanc",
+    "price": 994,
+    "inventory": 18368,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour with a lively nose of gooseberry and lemon; fruit character is replayed on the palate; crisp and dry, with light / medium body. Serving suggestion: As a summer sipper, with assorted salads including asparagus and goat cheese, lemon sole.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/399410/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Donini Merlot",
+    "price": 1475,
+    "inventory": 9181,
+    "description": "Origin: Italy, Friuli. Tasting note: Ruby red colour; plummy fruit nose with hints of leather, tar and anise; dry, with light berry and plummy fruit flavours with pronounced acidity and a clean, short finish; low tannins.. Serving suggestion: Serve slightly chilled with pastas, veal or chicken..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/150128/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Merlot" } ]
+  },
+  {
+    "name": "Brights House Dry White",
+    "price": 3295,
+    "inventory": 3431,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; apples and pears on the nose; light-bodied with light fruit flavours and a dry finish, a low alcohol wine. Serving suggestion: Serve chilled with appetizers, on its own or in spritzers.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/396838/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Josh Cellars Cabernet Sauvignon",
+    "price": 1685,
+    "inventory": 17842,
+    "description": "Origin: USA, California.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/461053/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Jackson-Triggs Chardonnay Bag in Box",
+    "price": 4495,
+    "inventory": 3285,
+    "description": "Origin: Canada, Ontario. Tasting note: Pale straw colour; light vanilla/oak \u0026 fruit aroma; ripe apple in flavour, dry wine with a touch of spice in the finish.. Serving suggestion: Chicken souvlaki.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/305144/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay Blend" } ]
+  },
+  {
+    "name": "J.P. Wiser's Deluxe Whisky",
+    "price": 2895,
+    "inventory": 17447,
+    "description": "Origin: Canada, Ontario. Tasting note: In the mid-1800's JP Wiser set out to create a whisky that pleased the nose, tongue and eye, the result is this bright golden whisky that offers aromas of sweet caramel, dried fruit, and vanilla; the palate is rich with flavours of toasted grain, sweet corn meal and vanilla followed by a smooth/creamy finish.. Serving suggestion: Mix in cocktail or on the rocks..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/893/images/full.jpeg",
+    "categories": [ { "type": "Whisky/Whiskey" }, { "type": "Canada" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Pinot Grigio",
+    "price": 1795,
+    "inventory": 8593,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: A dry, light-bodied white wine with refreshing pear and citrus flavours. Serving suggestion: Gournet poutine and appetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/669473/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Spumante Bambino",
+    "price": 1575,
+    "inventory": 8583,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; fresh, grapey/floral nose; sweet and fruity; easy drinking. Serving suggestion: Fruit-based desserts; cocktails or punches.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/4762/images/full.jpeg",
+    "categories": [ { "type": "Sparkling Wine" }, { "type": "Sparkling" } ]
+  },
+  {
+    "name": "Brights Maria Christina Red",
+    "price": 1475,
+    "inventory": 8561,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale garnet; smoky nose; off dry palate with berry flavour and a soft finish. Serving suggestion: Spicy chicken dishes.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/249904/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Cono Sur Tocornal Cabernet Sauvignon Merlot",
+    "price": 1525,
+    "inventory": 8538,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Deep purple ruby colour; dry, soft plumy berry character; light to medium bodied with little evidence of oak or tannin. Serving suggestion: Red pastas, pizza to grilled beef or bbq pork ribs.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/257170/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet/Merlot" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Cabernet Sauvignon Bag in Box",
+    "price": 4295,
+    "inventory": 3176,
+    "description": "Origin: Canada, Ontario. Tasting note: Medium ruby in colour; aromas of medium intensity, which include cassis, red cherry and light spice; on the palate, the wine is dry, with medium body, medium acidity and fine-textured medium tannins; flavours include red cherry, plum and spice, which lead to a short finish.. Serving suggestion: Serve with grilled meats, burgers, firm cheeses and casual fare..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/331371/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Shiraz Bag in Box",
+    "price": 4295,
+    "inventory": 3162,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Youthful purple colour; aromas of concord grape with hints of green pepper and floral; It is medium-bodied, soft and fruity on the palate.. Serving suggestion: Cold cuts.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/669457/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Shiraz/Syrah" } ]
+  },
+  {
+    "name": "Wiser's Special Blend Whisky",
+    "price": 6000,
+    "inventory": 7218,
+    "description": "Origin: Canada, Ontario. Tasting note: Hand-made using traditional methods and ingredients this golden amber whisky is fragrant with honey, vanilla and cloves on the nose; smooth and clean on the palate with a hint of spice on the finish, it's a well-balanced introduction to the Wiser's line.. Serving suggestion: Serve neat or mixed or add a splash to meat marinade.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/112672/images/full.jpeg",
+    "categories": [ { "type": "Whisky/Whiskey" }, { "type": "Canada" } ]
+  },
+  {
+    "name": "Vex Electric Lemonade 6 Pk-B",
+    "price": 1245,
+    "inventory": 6267,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Cloudy electric blue colour; aromas of lemon-lime and candy floss; on the palate it is sweet and mildly fizzy with flavours of candied lemon and summer popsicles.. Serving suggestion: Serve chilled and paired with potato chips or salted nuts..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/238345/images/full.jpeg",
+    "categories": [ { "type": "Coolers" }, { "type": "Sweet" } ]
+  },
+  {
+    "name": "Yellow Tail Shiraz",
+    "price": 2365,
+    "inventory": 8228,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Dark ruby purple; blackberry, red liquorice, vanilla bean and plum aromas; dry, full-bodied, softly structured with flavours of plum, ripe berry and a sweet fruit centre; long spicy finish.. Serving suggestion: BBQ fare and beef dishes..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/20289/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Shiraz/Syrah" } ]
+  },
+  {
+    "name": "Beringer Main \u0026 Vine Cabernet Sauvignon",
+    "price": 1100,
+    "inventory": 16447,
+    "description": "Origin: USA, California. Tasting note: Rich deep ruby colour; moderate aromas of dark berries, cassis and vanilla; flavours of juicy berry fruit, vanilla and sugarplums; dry, medium-bodied with silky tannins.. Serving suggestion: Serve with prime rib, beef tenderloin or pot roast..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/113001/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Lindemans Bin 65 Chardonnay",
+    "price": 1135,
+    "inventory": 16312,
+    "description": "Origin: Australia, Region Not Specified. Tasting note: Light yellow gold colour; floral with citrus and vanilla aromas; ripe fruit flavours; soft clean finish. Serving suggestion: Grilled shrimps; lemon chicken; tuna steak.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/142117/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay" } ]
+  },
+  {
+    "name": "Domaine D'Or Red",
+    "price": 3395,
+    "inventory": 3049,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Clear pale ruby; aromas of red cherry, raspberry and strawberry; medium bodied and soft, with flavours of red berry medley and candied fruit.. Serving suggestion: Serve with a cheese platter, glazed ham or fried mozzarella sticks..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/108688/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Carlo Rossi California White",
+    "price": 2795,
+    "inventory": 4056,
+    "description": "Origin: USA, Region Not Specified. Tasting note: Pale straw colour; grassy and vegetal aromas; clean green apple flavour.. Serving suggestion: Serve chilled with pasta in a light cream sauce.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/234666/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Woodbridge by Robert Mondavi Cabernet Sauvignon",
+    "price": 1395,
+    "inventory": 16135,
+    "description": "Origin: USA, Region Not Specified. Tasting note: Deep garnet red; wild red berry \u0026 cassis aroma; fresh fruit flavour, balanced wine, soft tannin good quality, easy drinking. Serving suggestion: Serve with grilled meats.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/48611/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Fontana Di Papa White",
+    "price": 1800,
+    "inventory": 6045,
+    "description": "Origin: Italy, Lazio. Tasting note: Clear very pale straw; citrus and herbal aromas with soft mineral note; dry, light bodied; clean citrus flavour with a soft mineral note to finish. Serving suggestion: Serve chilled with grilled fish or pasta in light cream sauce.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/48140/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Pinot Grigio Tetra",
+    "price": 1195,
+    "inventory": 11679,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: A dry, light-bodied white wine with refreshing pear and citrus flavours. Serving suggestion: Gournet poutine and appetizers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/16394/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Pinot Grigio" } ]
+  },
+  {
+    "name": "Jackson-Triggs Chardonnay",
+    "price": 1895,
+    "inventory": 7779,
+    "description": "Origin: Canada, Ontario. Tasting note: Pale straw colour; light vanilla/oak \u0026 fruit aroma; ripe apple in flavour, dry wine with a touch of spice in the finish.. Serving suggestion: Chicken souvlaki.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/328526/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Chardonnay" } ]
+  },
+  {
+    "name": "Sawmill Creek Riesling Bag in Box",
+    "price": 3995,
+    "inventory": 2876,
+    "description": "Origin: Canada, Ontario. Tasting note: Pale lemon colour; aromas and flavours of peach with light citrus notes and hints of honey; off-dry with balancing acidity.. Serving suggestion: Drinking well now with seafood, appetizers or Asian dishes..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/317537/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Riesling" } ]
+  },
+  {
+    "name": "Bodacious Smooth White Bag in Box",
+    "price": 3995,
+    "inventory": 2856,
+    "description": "Origin: Canada, Ontario. Tasting note: Bodacious Smooth White is a bestseller and customer favourite! Off-dry, with aromas and flavours of ripe peaches, citrus and tropical fruit, this blend of aromatic varieties is great for entertaining, and delicious with appetizers, salads and Asian cuisine.. Serving suggestion: Ideal as a patio sipper, or delicious with appetizers, salads and Asian cuisine.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/523688/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "White Blend" } ]
+  },
+  {
+    "name": "Wisers Special Blend Whisky",
+    "price": 4010,
+    "inventory": 9999,
+    "description": "Origin: Canada, Ontario. Tasting note: Hand-made using traditional methods and ingredients this golden amber whisky is fragrant with honey, vanilla and cloves on the nose; smooth and clean on the palate with a hint of spice on the finish, it's a well-balanced introduction to the Wiser's line.. Serving suggestion: Serve neat or mixed or add a splash to meat marinade.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/216671/images/full.jpeg",
+    "categories": [ { "type": "Whisky/Whiskey" }, { "type": "Canada" } ]
+  },
+  {
+    "name": "Sawmill Creek Autumn Blush Bag in Box",
+    "price": 3525,
+    "inventory": 2849,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Its easy-drinking nature makes it appealing to sip on any occasion. The pale pink colour leads to aromas of ripe berries and hints of melon. Juicy sweetness fills the palate with more flavours of ripe berry fruit, melon and white peach notes.. Serving suggestion: Serve this lightly chilled alongside spicy Asian dishes, ham, turkey or salads..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/68528/images/full.jpeg",
+    "categories": [ { "type": "Rose Wine" }, { "type": "Rose" } ]
+  },
+  {
+    "name": "Brights Maria Christina Red",
+    "price": 3695,
+    "inventory": 2832,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale garnet; smoky nose; off dry palate with berry flavour and a soft finish. Serving suggestion: Spicy chicken dishes.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/86512/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Vex Raspberry Lemonade 6 Pk-B",
+    "price": 1245,
+    "inventory": 5692,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale bubblegum pink colour; aromas of strawberry/raspberry, with citrus and grapy notes; very sweet, light to medium bodied, spritzy and balanced, dominating flavours of raspberry, with notes of citrus.. Serving suggestion: Try with mixed berry 'fool' or light mousse..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/273219/images/full.jpeg",
+    "categories": [ { "type": "Coolers" }, { "type": "Sweet" } ]
+  },
+  {
+    "name": "Gato Negro Sauvignon Blanc",
+    "price": 1330,
+    "inventory": 7486,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Pale straw colour; light grassy, melon and citrus aromas; dry, fruity flavours with an herbal edge.. Serving suggestion: Shrimp cocktail, steamed clams.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/79129/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Girls' Night Out Strawberry Samba",
+    "price": 1395,
+    "inventory": 7384,
+    "description": "Origin: Canada, Ontario. Tasting note: light pink colour; candied strawberry and watermelon aromas; light body, medium sweet flavour of strawberry and watermelon. Serving suggestion: serve chilled with finger foods.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/214049/images/full.jpeg",
+    "categories": [ { "type": "Specialty Wines" }, { "type": "Flavoured Wine" } ]
+  },
+  {
+    "name": "Sola Nero White",
+    "price": 1495,
+    "inventory": 7351,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Pale straw colour; pleasant apple-lemon aromas with sweet vanilla notes; soft, fruity, crisp and clean flavour with good balance on the pleasant finish.. Serving suggestion: A great party wine or with light snacks.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/572891/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Blend" } ]
+  },
+  {
+    "name": "Woodbridge by Robert Mondavi Sauvignon Blanc",
+    "price": 1150,
+    "inventory": 14580,
+    "description": "Origin: USA, Region Not Specified. Tasting note: Light lemon colour; dry and medium bodied; fresh, melon, citrus, vanilla aromas and flavours. Serving suggestion: Shellfish, light seafood, pasta with cream sauces.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/40501/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Sauvignon Blanc" } ]
+  },
+  {
+    "name": "Peller Estates French Cross Merlot Bag in Box",
+    "price": 4295,
+    "inventory": 2727,
+    "description": "Origin: Canada, Region Not Specified. Tasting note: Medium ruby; nose shows notes of plum, nutmeg, and herbs. The palate is medium bodied and dry with red berry character, violets, and dried herb characters.. Serving suggestion: A great companion for gourmet burgers..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/430025/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Merlot" } ]
+  },
+  {
+    "name": "Georges Duboeuf Beaujolais-Villages",
+    "price": 1420,
+    "inventory": 14544,
+    "description": "Origin: France, Burgundy. Tasting note: An intense bright ruby colour; shows fragrant aromas of red cherry/cranberry and spice with earthy/floral, cracked peppery notes; dry, soft and rounded palate, delightfully fresh and tart with easy tannins, shows forward flavours of stawberry, sour cherry, pepper and herb, with notes of dark candied fruit and sweet spice.. Serving suggestion: Serve slightly chilled on its own, or with most Bistro dishes. Pair it to salumi/charcuterie, cold meat dishes, grilled or blackend salmon or tuna, and roast/grilled poultry or veal..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/122077/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Gamay" } ]
+  },
+  {
+    "name": "Open Riesling Gewürztraminer VQA Bag in Box",
+    "price": 3995,
+    "inventory": 3630,
+    "description": "Origin: Canada, Ontario. Tasting note: clear, pale straw colour; floral, peach and hints of lychee; off-dry fruit flavours with crisp citrus finish. Serving suggestion: serve with lightly spiced thai salad.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/492231/images/full.jpeg",
+    "categories": [ { "type": "White Wine" }, { "type": "Riesling Blend" } ]
+  },
+  {
+    "name": "Concha Y Toro Frontera Cabernet Sauvignon",
+    "price": 1525,
+    "inventory": 7239,
+    "description": "Origin: Chile, Region Not Specified. Tasting note: Deep ruby colour; light cassis, plum, cherry, currant, raspberry, chocolate, earth \u0026 mint aroma; dry, medium bodied, with good berry flavour, through to a pleasant fruity finish.. Serving suggestion: Serve with grilled meats..",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/286187/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Cabernet Sauvignon" } ]
+  },
+  {
+    "name": "Folonari Valpolicella Classico",
+    "price": 2350,
+    "inventory": 7176,
+    "description": "Origin: Italy, Veneto. Tasting note: Ruby red colour; light cherry and spice aromas; light bodied with soft berry flavours.. Serving suggestion: Serve with soft cheese, grilled chicken or burgers.",
+    "image":
+      "https://dx5vpyka4lqst.cloudfront.net/products/26278/images/full.jpeg",
+    "categories": [ { "type": "Red Wine" }, { "type": "Valpolicella" } ]
+  }
+]

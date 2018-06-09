@@ -44,6 +44,14 @@ describe('Product routes', () => {
         });
     });
 
-
+    it(`GET /api/products/${products[1].id}`, () => {
+      return request(app)
+        .get(`/api/products/${products[1].id}`)
+        .expect(200)
+        .then(res => {
+          expect(res.body).to.be.an('object');
+          expect(res.body.name).to.equal('Pinot Grigio');
+        });
+    });
   });
 });

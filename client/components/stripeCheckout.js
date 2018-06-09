@@ -15,6 +15,9 @@ class Checkout extends React.Component {
       .then(() => {
         this.props.getNewCart(this.props.user.id); // gets new cart after changing status to created
       })
+      .then(() => {
+        history.push('/home')
+      })
       .catch(console.error);
     // change the current order(cart) in our database from cart to created
   };

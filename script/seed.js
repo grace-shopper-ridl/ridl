@@ -5,23 +5,10 @@ const { User, Product, Category } = require('../server/db/models');
 const productData = require('./products.json')
 const categoryData = require('./categories.json')
 
-/**
- * Welcome to the seed file! This seed file uses a newer language feature called...
- *
- *                  -=-= ASYNC...AWAIT -=-=
- *
- * Async-await is a joy to use! Read more about it in the MDN docs:
- *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
- *
- * Now that you've got the main idea, check it out in practice below!
- */
-
 async function seed() {
   await db.sync({ force: true });
   console.log('db synced!');
-  // Whoa! Because we `await` the promise that db.sync returns, the next line will not be
-  // executed until that promise resolves!
+
   const users = await Promise.all([
     User.create({ email: 'cody@email.com', password: '123' }),
     User.create({ email: 'murphy@email.com', password: '123' })
@@ -31,22 +18,30 @@ async function seed() {
 		categoryData.map(category => Category.create(category))
 	);
 
-	// For each product, loop through the 'categories' array, find the matching category from the created categories above, and add that category to the product
-  const products = await Promise.all(
-    productData.map(product => Product.create(product).then(createdProduct => {
-			if (product.hasOwnProperty('categories')){
-				product.categories.forEach(categoryInJson => {
-					const matchingCategoryInDb = categories.find(categoryInDb => {
-						return categoryInDb.type === categoryInJson.type
-					})
-					createdProduct.addCategory(matchingCategoryInDb)
-				})
-			}
-		}))
-);
+// this helper function matches the category in our seed data
+// with a category we just created
+const findMatchingCategory = categoryInJson => {
+	return categories.find(categoryInDb => {
+		return categoryInDb.type === categoryInJson.type
+	})
+};
 
-  // Wowzers! We can even `await` on the right-hand side of the assignment operator
-  // and store the result that the promise resolves to in a variable! This is nice!
+	// For each product, loop through the 'categories' array,
+	// find the matching category from the categories we just created,
+	// and add that category to the product
+  const products = await Promise.all(
+    productData.map(async product => {
+			const createdProduct = await Product.create(product)
+			if (product.hasOwnProperty('categories')){
+				await Promise.all(
+					product.categories.map(async categoryInJson => {
+						const matchingCategoryInDb = findMatchingCategory(categoryInJson)
+						await createdProduct.addCategory(matchingCategoryInDb)
+					})
+				)
+			}
+		})
+	);
 
   console.log(`seeded ${users.length} users`);
   console.log(`seeded ${products.length} products`);
@@ -64,9 +59,9 @@ if (module === require.main) {
       process.exitCode = 1;
     })
     .then(() => {
-      // console.log('closing db connection');
-      // db.close();
-      // console.log('db connection closed');
+      console.log('closing db connection');
+      db.close();
+      console.log('db connection closed');
     });
   /*
    * note: everything outside of the async function is totally synchronous

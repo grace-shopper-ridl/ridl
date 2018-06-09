@@ -24,16 +24,27 @@ const Cart = props => {
                 }
               />
             </label>
-            <button type="button" onClick={() => props.removeItem(props.cart.id, lineItem.id)} >Remove Item</button>
+            <button
+              type="button"
+              onClick={() => props.removeItem(props.cart.id, lineItem.id)}
+            >
+              Remove Item
+            </button>
           </div>
         ))}
-      <Checkout />
+      <p>TOTAL: ${props.subtotal / 100}</p>
+      <Checkout subtotal={props.subtotal} />
     </section>
   );
 };
 
 const mapStateToProps = state => ({
-  cart: state.cart
+  cart: state.cart,
+  subtotal:
+    state.cart.lineItems.reduce(
+      (currTotal, lineItem) => currTotal + lineItem.price * lineItem.qty,
+      0
+    )
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -41,7 +52,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(changeItemQuantityThunk(orderId, lineItemId, qty));
   },
   removeItem: (orderId, lineItemId) => {
-    dispatch(removeItemThunk(orderId, lineItemId))
+    dispatch(removeItemThunk(orderId, lineItemId));
   }
 });
 

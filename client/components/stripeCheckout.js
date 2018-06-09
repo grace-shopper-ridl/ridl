@@ -13,7 +13,7 @@ class Checkout extends React.Component {
     return (
       <StripeCheckout
         //this.props.cart.subTotal
-        amount={1000000} // cents
+        amount={this.props.subtotal} // cents
         currency="USD"
         token={this.onToken}
         stripeKey="pk_test_LA1a5gfY8ZPlFKY14Sgo6mj3"

@@ -13,7 +13,7 @@ const Cart = props => {
             <img src={lineItem.product.image} />
             <p>${lineItem.price}</p>
             <label>
-              Quantity: <input type="number" value={lineItem.qty} />
+              Quantity: <input type="number" placeholder={lineItem.qty} />
             </label>
           </div>
         ))}

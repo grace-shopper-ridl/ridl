@@ -73,7 +73,8 @@ router.put('/:orderId/lineItems/:lineItemId', (req, res, next) => {
       return LineItem.findAll({
         where: {
           orderId: req.params.orderId
-        }
+        },
+        include: [Product]
       });
     })
     .then(lineItems => res.send(lineItems))

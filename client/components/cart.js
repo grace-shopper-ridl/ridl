@@ -10,9 +10,10 @@ const Cart = props => {
                 <h3>{lineItem.product.name}</h3>
                 <img src={lineItem.product.image} />
                 <p>${lineItem.price}</p>
-                <p>Quantity: {lineItem.qty}</p>
+                <label>Quantity: <input type="number" value={lineItem.qty} /></label>
             </div>
     ))}
+      <button>Checkout</button>
       </section>
     )
 };

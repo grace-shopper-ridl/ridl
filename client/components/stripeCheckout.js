@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
-export default class Checkout extends React.Component {
+class Checkout extends React.Component {
   onToken = token => {
-    axios.put('/stripe-token', token);
+    axios.post(`/api/orders/${this.props.cart.id}/checkout`, token);
     // change the current order(cart) in our database from cart to created
   };
 
@@ -20,3 +21,9 @@ export default class Checkout extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  cart: state.cart
+})
+
+export default connect(mapStateToProps)(Checkout);

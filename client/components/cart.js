@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { changeItemQuantityThunk } from '../store';
+import Checkout from './stripeCheckout';
 
 const Cart = props => {
   return (
@@ -16,7 +17,7 @@ const Cart = props => {
             </label>
           </div>
         ))}
-      <button type="submit">Checkout</button>
+      <Checkout />
     </section>
   );
 };

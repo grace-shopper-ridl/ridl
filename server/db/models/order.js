@@ -17,9 +17,11 @@ const Order = db.define('order', {
     ),
     defaultValue: 'cart'
   },
-  // eventually we want to be able to calculate the subtotal from qty and price in lineitem model
-  subTotal: {
-    type: Sequelize.DECIMAL
+  total: {
+    type: Sequelize.VIRTUAL,
+    get() {
+      return this.getTotal();
+    }
   }
 });
 
@@ -39,7 +41,10 @@ Order.getCartByUser = function(userId) {
 Order.prototype.getTotal = function() {
   let total = 0;
   return this.getLineItems().then(lineItems => {
-    lineItems.forEach(lineItem => (total += lineItem.price));
+    lineItems.forEach(lineItem => {
+      if (!lineItem.qty) total += lineItem.price;
+      else total += lineItem.price * lineItem.qty;
+    });
     return total;
   });
 };

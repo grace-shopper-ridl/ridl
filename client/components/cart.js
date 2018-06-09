@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeItemQuantityThunk } from '../store';
+import { changeItemQuantityThunk, removeItemThunk } from '../store';
 import Checkout from './stripeCheckout';
 
 const Cart = props => {
@@ -13,8 +13,17 @@ const Cart = props => {
             <img src={lineItem.product.image} />
             <p>${lineItem.price}</p>
             <label>
-              Quantity: <input type="number" placeholder={lineItem.qty} />
+              Quantity:{' '}
+              <input
+                type="number"
+                value={lineItem.qty}
+                min="1"
+                onChange={evt =>
+                  props.changeQty(props.cart.id, lineItem.id, evt.target.value)
+                }
+              />
             </label>
+            <button type="button" onClick={() => props.removeItem(props.cart.id, lineItem.id)} >Remove Item</button>
           </div>
         ))}
       <Checkout />
@@ -29,6 +38,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   changeQty: (orderId, lineItemId, qty) => {
     dispatch(changeItemQuantityThunk(orderId, lineItemId, qty));
+  },
+  removeItem: (orderId, lineItemId) => {
+    dispatch(removeItemThunk(orderId, lineItemId))
   }
 });
 

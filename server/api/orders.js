@@ -50,13 +50,40 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+router.post('/:orderId/checkout', (req, res, next) => {
+  if (req.body) {
+    Order.findById(req.params.orderId)
+      .then(order => {
+        let total = 0;
+        order.getLineItems()
+          .then(lineItems => {
+            lineItems.forEach(lineItem => {
+              if (!lineItem.qty) total += lineItem.price;
+              else total += lineItem.price * lineItem.qty;
+            });
+          })
+          .then(() => {
+            return order.update(
+              { status: 'created', subTotal: total },
+              { returning: true, plain: true }
+            )});
+      })
+      .then(order => res.json(order))
+      .catch(next);
+  } else {
+    res.status(400).send('payment could not be processed');
+  }
+});
+
 // POST /orders/:orderId/listItems
 router.post('/:orderId/lineItems', (req, res, next) => {
   Order.findById(req.params.orderId)
     .then(order =>
-      LineItem.create(req.body).then(created => created.setOrder(order)))
+      LineItem.create(req.body).then(created => created.setOrder(order))
+    )
     .then(updated =>
-      LineItem.findById(updated.id, { include: [{ model: Product }] }))
+      LineItem.findById(updated.id, { include: [{ model: Product }] })
+    )
     .then(lineItem => res.json(lineItem))
     .catch(next);
 });
@@ -73,7 +100,7 @@ router.put('/:orderId/lineItems/:lineItemId', (req, res, next) => {
         where: {
           orderId: req.params.orderId
         },
-        include: [{model: Product}]
+        include: [{ model: Product }]
       });
     })
     .then(lineItems => res.send(lineItems))

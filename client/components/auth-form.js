@@ -10,22 +10,24 @@ const AuthForm = (props) => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
+    <div className="user-form">
+      <form onSubmit={handleSubmit} name={name} className="user-form__wrapper">
+        <div className="user-form__input">
           <label htmlFor="email"><small>Email</small></label>
           <input name="email" type="text" />
         </div>
-        <div>
+        <div className="user-form__input">
           <label htmlFor="password"><small>Password</small></label>
           <input name="password" type="password" />
         </div>
-        <div>
-          <button type="submit">{displayName}</button>
+        <div className="user-form__input">
+          <button type="submit" className="user-form__button user-form__button___login">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
+        <div className="user-form__input">
+          <a className="user-form__button user-form__button___google" href="/auth/google">{displayName} with Google</a>
+        </div>
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
     </div>
   )
 }

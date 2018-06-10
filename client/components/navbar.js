@@ -5,31 +5,46 @@ import { Link } from 'react-router-dom';
 import { logout } from '../store';
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <div>
-    <h1>BOILERMAKER</h1>
-    <nav>
+  <nav className="nav">
+    <ul className="nav__list">
+      <li className="nav__item">
+        <Link to="/home">Home</Link>
+      </li>
+      <li className="nav__item">
+        <Link to="/products">Wines</Link>
+      </li>
+      <li className="nav__item">
+        Categories{' '}
+        <i className="fa fa-caret-down" aria-hidden="true">
+          &nbsp;
+        </i>
+      </li>
+    </ul>
+    <h1 className="nav__header">wine-y</h1>
+    <ul className="nav__list">
       {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
+        <li className="nav__item">
           <a href="#" onClick={handleClick}>
             Logout
           </a>
-          <Link to="/products">Products</Link>
-          <Link to="/cart">Cart</Link>
-        </div>
+        </li>
       ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
+        <li className="nav__item">
           <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/cart">Cart</Link>
-        </div>
+        </li>
       )}
-    </nav>
-    <hr />
-  </div>
+      {isLoggedIn ? null : (
+        <li className="nav__item">
+          <Link to="/signup">Sign Up</Link>
+        </li>
+      )}
+      <li className="nav__item">
+        <Link to="/cart">
+          <i className="fa fa-shopping-cart" aria-hidden="true" />
+        </Link>
+      </li>
+    </ul>
+  </nav>
 );
 
 /**

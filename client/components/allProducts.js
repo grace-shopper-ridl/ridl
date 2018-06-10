@@ -20,25 +20,25 @@ class AllProducts extends Component {
     return (
       <section id="products">
         <input
+					className="search"
           name="query"
           type="text"
-          placeholder="Search Product by Name"
+          placeholder="Search Wines by Name"
           value={this.state.query}
           onChange={this.handleChange}
         />
-        <h1 id="products-header">Products: </h1>
+			<h1 id="products-header">Wines:</h1>
         {products
           .filter(product => product.name.toLowerCase().includes(query))
           .map(product => {
             return (
               <div key={product.id} className="individual-product">
                 <Link to={`/products/${product.id}`}>
-                  <h3>{product.name}</h3>
+                  <h2 className="individual-product__name">{product.name}</h2>
                 </Link>
-                <h4>{product.description}</h4>
-                <img src={product.image} />
-                <p>${product.price}</p>
-                {product.inventory < 10 && <p>ONLY {product.inventory} LEFT</p>}
+								<p className="individual-product__price">${product.price}</p>
+								{product.inventory < 10 && <p className="inventory-warning">ONLY {product.inventory} LEFT</p>}
+                <img className="individual-product__img" src={product.image} />
               </div>
             );
           })}

@@ -40,11 +40,10 @@ const Cart = props => {
 
 const mapStateToProps = state => ({
   cart: state.cart,
-  subtotal:
-    state.cart.lineItems.reduce(
-      (currTotal, lineItem) => currTotal + lineItem.price * lineItem.qty,
-      0
-    )
+  subtotal: state.cart.lineItems.reduce(
+    (currTotal, lineItem) => currTotal + lineItem.price * lineItem.qty,
+    0
+  )
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -52,6 +51,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(changeItemQuantityThunk(orderId, lineItemId, qty));
   },
   removeItem: (orderId, lineItemId) => {
+    console.log('orderid', orderId, 'lineItemid', lineItemId);
     dispatch(removeItemThunk(orderId, lineItemId));
   }
 });

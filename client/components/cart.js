@@ -51,7 +51,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(changeItemQuantityThunk(orderId, lineItemId, qty));
   },
   removeItem: (orderId, lineItemId) => {
-    console.log('orderid', orderId, 'lineItemid', lineItemId);
     dispatch(removeItemThunk(orderId, lineItemId));
   }
 });

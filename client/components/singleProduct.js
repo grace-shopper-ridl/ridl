@@ -103,7 +103,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchCurrentProduct(productId));
   },
   addItemToCart: (lineItems, orderId, productId, price, qty) => {
-    console.log(lineItems, orderId, productId);
     let alreadyExistingLineItem = lineItems.find(
       element => element.productId === productId
     );

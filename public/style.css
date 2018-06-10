@@ -54,7 +54,6 @@ label {
 .nav__item {
 	background-color: #F2F2F2;
 	border-radius: 5px;
-	cursor: pointer;
 	margin: 2px;
 	padding: 5px 10px;
 	transition: all 0.35s ease;
@@ -187,4 +186,57 @@ form div {
 
 .stars > img {
   height: 5vh;
+}
+
+.landing-page {
+	align-items: center;
+	background-image: url('/img/grapevines.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	height: 90vh;
+	justify-content: space-around;
+	margin: 0;
+}
+
+.landing-page header {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid #3B476C;
+	border-radius: 20px;
+	color: #333;
+	height: 70%;
+	padding: 30px;
+	width: 70%;
+}
+
+.landing-page__heading {
+	font-family: 'Song Myung', serif;
+	font-size: 6rem;
+	line-height: 100%;
+	margin-bottom: 0;
+}
+
+.landing-page__tagline {
+	color: #444;
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5rem;
+	letter-spacing: 1px;
+	line-height: 100%;
+}
+
+.landing-page__button {
+	align-self: flex-end;
+	background-color: #3B476C;
+	border-radius: 5px;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 2rem;
+	margin-top: 60px;
+	padding: 5px 10px;
+	transition: all 0.35s ease;
+}
+
+.landing-page__button:hover {
+	box-shadow: 0 0 8px 5px rgba(59, 71, 108, 0.5);
+	z-index: 1;
 }

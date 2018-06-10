@@ -6,7 +6,8 @@ import user from './user';
 import products from './allProducts';
 import currentProduct from './currentProduct';
 import cart from './cart';
-import categories from './categories'
+import categories from './categories';
+import currentCategory from './currentCategory'
 
 let initState = {};
 const persistedState = localStorage.getItem('reduxState');
@@ -15,7 +16,14 @@ if (persistedState) {
   initState = JSON.parse(persistedState);
 }
 
-const reducer = combineReducers({ user, products, currentProduct, cart, categories });
+const reducer = combineReducers({
+  user,
+  products,
+  currentProduct,
+  cart,
+  categories,
+  currentCategory
+});
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
 );
@@ -30,3 +38,5 @@ export * from './user';
 export * from './allProducts';
 export * from './currentProduct';
 export * from './cart';
+export * from './categories';
+export * from './currentCategory';

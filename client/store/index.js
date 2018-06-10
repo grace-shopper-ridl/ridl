@@ -6,6 +6,7 @@ import user from './user';
 import products from './allProducts';
 import currentProduct from './currentProduct';
 import cart from './cart';
+import categories from './categories'
 
 let initState = {};
 const persistedState = localStorage.getItem('reduxState');
@@ -14,7 +15,7 @@ if (persistedState) {
   initState = JSON.parse(persistedState);
 }
 
-const reducer = combineReducers({ user, products, currentProduct, cart });
+const reducer = combineReducers({ user, products, currentProduct, cart, categories });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
 );

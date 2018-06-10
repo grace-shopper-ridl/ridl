@@ -25,28 +25,21 @@ export const removeCart = () => ({ type: REMOVE_CART });
 
 export const getCartThunk = userId => dispatch => {
   // if userId is undefined, create a new cart without a userid
-  if (!userId) {
-    axios
-      .post(`/api/orders`)
-      .then(res => res.data)
-      .then(cart => {
-        dispatch(getCart(cart));
-      })
-      .catch(err => console.log(err));
-  } else {
-    axios
-      .get(`/api/users/${userId}/cart`)
-      .then(res => res.data)
-      .then(cart => {
-        dispatch(getCart(cart));
-      })
-      .catch(err => console.log(err));
-  }
+  let orderPromise = !userId
+    ? axios.post(`/api/orders`)
+    : axios.get(`/api/users/${userId}/cart`);
+
+  orderPromise
+    .then(res => res.data)
+    .then(cart => {
+      dispatch(getCart(cart));
+    })
+    .catch(err => console.log(err));
 };
 
 export const addItemThunk = (orderId, productId, price, qty) => dispatch => {
   axios
-    .post(`/api/orders/${orderId}/lineItems`, { productId, price, qty }) // PLACEHOLDER This route will depend on backend implementation
+    .post(`/api/orders/${orderId}/lineItems`, { productId, price, qty })
     .then(res => res.data)
     .then(newLineItem => dispatch(addItem(newLineItem)))
     .catch(err => console.log(err));
@@ -54,7 +47,7 @@ export const addItemThunk = (orderId, productId, price, qty) => dispatch => {
 
 export const removeItemThunk = (orderId, lineItemId) => dispatch => {
   axios
-    .delete(`/api/orders/${orderId}/lineItems/${lineItemId}`) // PLACEHOLDER This route will depend on backend implementation
+    .delete(`/api/orders/${orderId}/lineItems/${lineItemId}`)
     .then(res => res.data)
     .then(allItemsMinusDeleted => dispatch(removeItem(allItemsMinusDeleted)))
     .catch(err => console.log(err));
@@ -67,7 +60,7 @@ export const changeItemQuantityThunk = (
 ) => dispatch => {
   if (qty) {
     axios
-      .put(`/api/orders/${orderId}/lineItems/${lineItemId}`, { qty }) // PLACEHOLDER This route will depend on backend implementation
+      .put(`/api/orders/${orderId}/lineItems/${lineItemId}`, { qty })
       .then(res => res.data)
       .then(allItemsUpdated => dispatch(changeItemQuantity(allItemsUpdated)))
       .catch(err => console.log(err));

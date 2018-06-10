@@ -52,13 +52,14 @@ class SingleProduct extends Component {
     const cart = this.props.cart;
     const reviews = dummyReviews;
     return (
-      <div id="single-product">
-        <h2>{singleProduct.name}</h2>
-        <Price product={singleProduct} />
-        <img src={singleProduct.image} />
-        <h4>{singleProduct.description}</h4>
+      <section id="single-product" className="product-detail">
+        <h1 className="product-detail__name">{singleProduct.name}</h1>
+        <Price product={singleProduct} className="product-detail__price" />
+        <img className="product-detail__img" src={singleProduct.image} />
+        <p className="product-detail__descr">{singleProduct.description}</p>
         {this.props.isLoggedIn && (
           <button
+            className="addToCart"
             type="button"
             onClick={() => {
               this.props.addItemToCart(
@@ -73,18 +74,18 @@ class SingleProduct extends Component {
             Add to Cart
           </button>
         )}
-        <h3>REVIEWS:</h3>
         <section id="reviews">
+           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
           {reviews.map(review => (
             <div key={review.id} className="review">
-              <h4>{review.title}</h4>
-              <p>{review.description}</p>
+              <h3 className="review__title">{review.title}</h3>
+              <p className="review__descr">{review.description}</p>
               <p>Rating:</p>
               <Ratings rating={review.rating} />
             </div>
           ))}
         </section>
-      </div>
+      </section>
     );
   }
 }

@@ -9,40 +9,6 @@ import {
   getCartThunk
 } from '../store';
 
-const dummyReviews = [
-  {
-    id: 1,
-    title: 'JUST THE WORST',
-    rating: 1,
-    description: 'IF I COULD RATE THIS A ZERO I WOULD!!!'
-  },
-  {
-    id: 2,
-    title: 'The best thing ever',
-    rating: 5,
-    description:
-      'I have no idea why the above reviewer feels the way they do, it is great.'
-  },
-  {
-    id: 3,
-    title: 'Super Cool',
-    rating: 4,
-    description: 'Cold as ice.'
-  },
-  {
-    id: 4,
-    title: 'Blah',
-    rating: 3,
-    description: "It's like your opinion man."
-  },
-  {
-    id: 5,
-    title: 'iT aLrIGHt',
-    rating: 2,
-    description: 'Probably'
-  }
-];
-
 class SingleProduct extends Component {
   componentDidMount() {
     this.props.setCurrentProduct(this.props.match.params.productId);
@@ -52,7 +18,7 @@ class SingleProduct extends Component {
   render() {
     const singleProduct = this.props.currentProduct;
     const cart = this.props.cart;
-    const reviews = dummyReviews;
+    const reviews = singleProduct.reviews;
     return (
       <section id="single-product" className="product-detail">
         <h1 className="product-detail__name">{singleProduct.name}</h1>

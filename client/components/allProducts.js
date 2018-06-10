@@ -20,14 +20,14 @@ class AllProducts extends Component {
     return (
       <section id="products">
         <input
-					className="search"
+          className="search"
           name="query"
           type="text"
           placeholder="Search Wines by Name"
           value={this.state.query}
           onChange={this.handleChange}
         />
-			<h1 id="products-header">Wines:</h1>
+      <h1 id="products-header">Wines:</h1>
         {products
           .filter(product => product.name.toLowerCase().includes(query))
           .map(product => {
@@ -36,8 +36,8 @@ class AllProducts extends Component {
                 <Link to={`/products/${product.id}`}>
                   <h2 className="individual-product__name">{product.name}</h2>
                 </Link>
-								<p className="individual-product__price">${product.price}</p>
-								{product.inventory < 10 && <p className="inventory-warning">ONLY {product.inventory} LEFT</p>}
+                <p className="individual-product__price">${product.price}</p>
+                {product.inventory < 10 && <p className="inventory-warning">ONLY {product.inventory} LEFT</p>}
                 <img className="individual-product__img" src={product.image} />
               </div>
             );

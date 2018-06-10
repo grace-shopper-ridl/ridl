@@ -58,7 +58,7 @@ class SingleProduct extends Component {
         <p className="product-detail__descr">{singleProduct.description}</p>
         {this.props.isLoggedIn && (
           <button
-						className="addToCart"
+            className="addToCart"
             type="button"
             onClick={() => {
               this.props.addItemToCart(
@@ -74,7 +74,7 @@ class SingleProduct extends Component {
           </button>
         )}
         <section id="reviews">
-					 <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
+           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
           {reviews.map(review => (
             <div key={review.id} className="review">
               <h3 className="review__title">{review.title}</h3>

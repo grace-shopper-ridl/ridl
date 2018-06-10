@@ -59,7 +59,7 @@ class SingleProduct extends Component {
         <Price product={singleProduct} className="product-detail__price" />
         <img className="product-detail__img" src={singleProduct.image} />
         <p className="product-detail__descr">{singleProduct.description}</p>
-        {this.props.isLoggedIn && (
+        {
           <button
             className="addToCart"
             type="button"
@@ -75,7 +75,7 @@ class SingleProduct extends Component {
           >
             Add to Cart
           </button>
-        )}
+        }
         <section id="reviews">
           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
           {reviews.map(review => (

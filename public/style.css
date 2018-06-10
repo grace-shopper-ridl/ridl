@@ -99,7 +99,7 @@ form div {
 	margin: 5px 5px 15px 5px;
 }
 
-.individual-product__price {
+.individual-product__price, .product-detail__price {
 	display: inline-block;
   width: 50px;
 	height: 34px;
@@ -117,8 +117,7 @@ form div {
 	padding: 0 10px 0 10px;
 }
 
-/* Makes the triangle */
-.individual-product__price:before {
+.individual-product__price:before, .product-detail__price:before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -130,8 +129,7 @@ form div {
 	border-right: 17px solid #D0AD42;
 }
 
-/* Makes the circle */
-.individual-product__price:after {
+.individual-product__price:after, .product-detail__price:after {
 	content: "";
 	background-color: white;
 	border-radius: 50%;
@@ -141,10 +139,6 @@ form div {
 	position: absolute;
 	left: -9px;
 	top: 15px;
-}
-
-.individual-product__descr {
-	font-size: 1rem;
 }
 
 .individual-product__img {
@@ -163,29 +157,6 @@ form div {
 	font-size: 1.2rem;
 	padding: 15px;
 	width: 60vw;
-}
-
-#reviews {
-  display: flex;
-  flex-direction: column;
-}
-
-.review {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 5em;
-}
-
-.review > h4 {
-  color: turquoise;
-}
-
-.stars {
-  display: flex;
-}
-
-.stars > img {
-  height: 5vh;
 }
 
 .landing-page {
@@ -239,4 +210,75 @@ form div {
 .landing-page__button:hover {
 	box-shadow: 0 0 8px 5px rgba(59, 71, 108, 0.5);
 	z-index: 1;
+}
+
+#single-product {
+	margin: 15px 30px;
+}
+
+.product-detail {
+	background-color: #fff;
+	border: 1px solid #687198;
+	box-shadow: 5px 5px #687198;
+	margin: 15px 0;
+	padding: 30px;
+}
+
+.product-detail__name {
+	font-family: 'Song Myung', serif;
+	font-size: 2.4rem;
+	line-height: 1.2em;
+	margin: 5px 5px 15px 5px;
+}
+
+.product-detail__img {
+	display: block;
+	max-width: 450px;
+	width: 40%;
+}
+
+.product-detail__descr {
+	font-size: 1.2rem;
+	width: 70%;
+}
+
+.addToCart {
+	
+}
+
+#reviews {
+	border-top: 1px solid #687198;
+  display: flex;
+  flex-direction: column;
+	margin-top: 60px;
+}
+
+.review {
+	background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+	padding: 15px;
+}
+
+.review__heading {
+	display: block;
+	font-family: 'Song Myung', serif;
+	margin-bottom: 30px;
+}
+
+.review__title {
+	margin: 0;
+}
+
+.review__descr {
+	width: 70%;
+}
+
+.stars {
+  display: inline-block;
+}
+
+.stars > img {
+  height: 20px;
 }

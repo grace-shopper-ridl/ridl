@@ -5,7 +5,8 @@ import Price from './price';
 import {
   fetchCurrentProduct,
   addItemThunk,
-  changeItemQuantityThunk
+  changeItemQuantityThunk,
+  getCartThunk
 } from '../store';
 
 const dummyReviews = [
@@ -45,6 +46,7 @@ const dummyReviews = [
 class SingleProduct extends Component {
   componentDidMount() {
     this.props.setCurrentProduct(this.props.match.params.productId);
+    this.props.createUnauthCart();
   }
 
   render() {
@@ -57,7 +59,7 @@ class SingleProduct extends Component {
         <Price product={singleProduct} />
         <img src={singleProduct.image} />
         <h4>{singleProduct.description}</h4>
-        {this.props.isLoggedIn && (
+        {
           <button
             type="button"
             onClick={() => {
@@ -72,7 +74,7 @@ class SingleProduct extends Component {
           >
             Add to Cart
           </button>
-        )}
+        }
         <h3>REVIEWS:</h3>
         <section id="reviews">
           {reviews.map(review => (
@@ -100,6 +102,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchCurrentProduct(productId));
   },
   addItemToCart: (lineItems, orderId, productId, price, qty) => {
+    console.log(lineItems, orderId, productId);
     let alreadyExistingLineItem = lineItems.find(
       element => element.productId === productId
     );
@@ -114,6 +117,10 @@ const mapDispatchToProps = dispatch => ({
         )
       );
     }
+  },
+  createUnauthCart: () => {
+    let cart = JSON.parse(localStorage.getItem('reduxState')).cart.id;
+    if (!cart) dispatch(getCartThunk());
   }
 });
 

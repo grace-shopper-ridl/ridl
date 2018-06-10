@@ -58,6 +58,7 @@ class SingleProduct extends Component {
         <p className="product-detail__descr">{singleProduct.description}</p>
         {this.props.isLoggedIn && (
           <button
+						className="addToCart"
             type="button"
             onClick={() => {
               this.props.addItemToCart(

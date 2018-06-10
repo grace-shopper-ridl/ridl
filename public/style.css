@@ -196,7 +196,6 @@ form div {
 }
 
 .landing-page__button {
-	align-self: flex-end;
 	background-color: #3B476C;
 	border-radius: 5px;
 	color: #fff;
@@ -213,7 +212,8 @@ form div {
 }
 
 #single-product {
-	margin: 15px 30px;
+	margin: 15px auto;
+	max-width: 60%;
 }
 
 .product-detail {
@@ -242,9 +242,23 @@ form div {
 	width: 70%;
 }
 
+
 .addToCart {
-	
+	background-color: #3B476C;
+	border-radius: 5px;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.3rem;
+	margin-top: 15px;
+	padding: 7px 13px;
+	transition: all 0.35s ease;
 }
+
+.addToCart:hover {
+	box-shadow: 0 0 8px 5px rgba(59, 71, 108, 0.2);
+	z-index: 1;
+}
+
 
 #reviews {
 	border-top: 1px solid #687198;

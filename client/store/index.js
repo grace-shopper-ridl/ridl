@@ -5,13 +5,24 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import user from './user';
 import products from './allProducts';
 import currentProduct from './currentProduct';
-import cart from './cart'
+import cart from './cart';
+
+let initState = {};
+const persistedState = localStorage.getItem('reduxState');
+
+if (persistedState) {
+  initState = JSON.parse(persistedState);
+}
 
 const reducer = combineReducers({ user, products, currentProduct, cart });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
 );
-const store = createStore(reducer, middleware);
+const store = createStore(reducer, initState, middleware);
+
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+});
 
 export default store;
 export * from './user';

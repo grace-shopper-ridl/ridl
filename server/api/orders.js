@@ -71,11 +71,9 @@ router.post('/:orderId/checkout', (req, res, next) => {
 router.post('/:orderId/lineItems', (req, res, next) => {
   Order.findById(req.params.orderId)
     .then(order =>
-      LineItem.create(req.body).then(created => created.setOrder(order))
-    )
+      LineItem.create(req.body).then(created => created.setOrder(order)))
     .then(updated =>
-      LineItem.findById(updated.id, { include: [{ model: Product }] })
-    )
+      LineItem.findById(updated.id, { include: [{ model: Product }] }))
     .then(lineItem => res.json(lineItem))
     .catch(next);
 });
@@ -105,7 +103,7 @@ router.delete('/:orderId/lineItems/:lineItemId', (req, res, next) => {
   LineItem.findById(req.params.lineItemId)
     .then(item => {
       return item.getOrder().then(order => {
-        if (req.user.id !== order.userId || order.status !== 'cart') {
+        if (order.status !== 'cart') {
           forbidden = { status: 403, message: 'FORBIDDEN' };
         } else {
           return item.destroy();

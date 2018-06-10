@@ -5,7 +5,8 @@ import Price from './price';
 import {
   fetchCurrentProduct,
   addItemThunk,
-  changeItemQuantityThunk
+  changeItemQuantityThunk,
+  getCartThunk
 } from '../store';
 
 const dummyReviews = [
@@ -45,6 +46,7 @@ const dummyReviews = [
 class SingleProduct extends Component {
   componentDidMount() {
     this.props.setCurrentProduct(this.props.match.params.productId);
+    this.props.createUnauthCart();
   }
 
   render() {
@@ -57,7 +59,7 @@ class SingleProduct extends Component {
         <Price product={singleProduct} className="product-detail__price" />
         <img className="product-detail__img" src={singleProduct.image} />
         <p className="product-detail__descr">{singleProduct.description}</p>
-        {this.props.isLoggedIn && (
+        {
           <button
             className="addToCart"
             type="button"
@@ -73,9 +75,9 @@ class SingleProduct extends Component {
           >
             Add to Cart
           </button>
-        )}
+        }
         <section id="reviews">
-           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
+          <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
           {reviews.map(review => (
             <div key={review.id} className="review">
               <h3 className="review__title">{review.title}</h3>
@@ -115,6 +117,10 @@ const mapDispatchToProps = dispatch => ({
         )
       );
     }
+  },
+  createUnauthCart: () => {
+    let cart = JSON.parse(localStorage.getItem('reduxState')).cart.id;
+    if (!cart) dispatch(getCartThunk());
   }
 });
 

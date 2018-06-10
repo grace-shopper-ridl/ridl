@@ -40,11 +40,10 @@ const Cart = props => {
 
 const mapStateToProps = state => ({
   cart: state.cart,
-  subtotal:
-    state.cart.lineItems.reduce(
-      (currTotal, lineItem) => currTotal + lineItem.price * lineItem.qty,
-      0
-    )
+  subtotal: state.cart.lineItems.reduce(
+    (currTotal, lineItem) => currTotal + lineItem.price * lineItem.qty,
+    0
+  )
 });
 
 const mapDispatchToProps = dispatch => ({

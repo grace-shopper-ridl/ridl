@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Price from './price';
 
 class AllProducts extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class AllProducts extends Component {
                 <Link to={`/products/${product.id}`}>
                   <h2 className="individual-product__name">{product.name}</h2>
                 </Link>
-                <p className="individual-product__price">${product.price}</p>
+                <Price product={product} className="individual-product__price" />
                 {product.inventory < 10 && <p className="inventory-warning">ONLY {product.inventory} LEFT</p>}
                 <img className="individual-product__img" src={product.image} />
               </div>

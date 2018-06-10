@@ -1,10 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import { getCartThunk } from '../store';
+import history from '../history';
 
-export default class Checkout extends React.Component {
+class Checkout extends React.Component {
   onToken = token => {
-    axios.put('/stripe-token', token);
+    axios
+      .post(`/api/orders/${this.props.cart.id}/checkout`, {
+        token,
+        amount: this.props.subtotal
+      })
+      .then(() => {
+        this.props.getNewCart(this.props.user.id); // gets new cart after changing status to created
+      })
+      .then(() => {
+        history.push('/home')
+      })
+      .catch(console.error);
     // change the current order(cart) in our database from cart to created
   };
 
@@ -12,7 +26,7 @@ export default class Checkout extends React.Component {
     return (
       <StripeCheckout
         //this.props.cart.subTotal
-        amount={1000000} // cents
+        amount={this.props.subtotal} // cents
         currency="USD"
         token={this.onToken}
         stripeKey="pk_test_LA1a5gfY8ZPlFKY14Sgo6mj3"
@@ -20,3 +34,16 @@ export default class Checkout extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  cart: state.cart,
+  user: state.user
+});
+
+const mapDispatchToProps = dispatch => ({
+  getNewCart: userId => {
+    dispatch(getCartThunk(userId));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

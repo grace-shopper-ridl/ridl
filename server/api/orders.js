@@ -50,15 +50,33 @@ router.post('/', (req, res, next) => {
     .catch(next);
 });
 
+router.post('/:orderId/checkout', (req, res, next) => {
+  if (req.body.token) {
+    Order.update(
+      { status: 'created', subTotal: req.body.amount },
+      {
+        where: { id: req.params.orderId },
+        returning: true,
+        plain: true
+      }
+    )
+      .then(order => res.json(order))
+      .catch(next);
+  } else {
+    res.status(400).send('payment could not be processed');
+  }
+});
+
 // POST /orders/:orderId/listItems
 router.post('/:orderId/lineItems', (req, res, next) => {
   Order.findById(req.params.orderId)
-    .then(order => {
-      LineItem.create(req.body).then(lineItem => {
-        lineItem.setOrder(order);
-        res.send(lineItem);
-      });
-    })
+    .then(order =>
+      LineItem.create(req.body).then(created => created.setOrder(order))
+    )
+    .then(updated =>
+      LineItem.findById(updated.id, { include: [{ model: Product }] })
+    )
+    .then(lineItem => res.json(lineItem))
     .catch(next);
 });
 
@@ -74,7 +92,7 @@ router.put('/:orderId/lineItems/:lineItemId', (req, res, next) => {
         where: {
           orderId: req.params.orderId
         },
-        include: [Product]
+        include: [{ model: Product }]
       });
     })
     .then(lineItems => res.send(lineItems))
@@ -98,7 +116,8 @@ router.delete('/:orderId/lineItems/:lineItemId', (req, res, next) => {
       return LineItem.findAll({
         where: {
           orderId: req.params.orderId
-        }
+        },
+        include: { model: Product }
       });
     })
     .then(lineItems => {

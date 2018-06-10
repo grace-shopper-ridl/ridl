@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeItemQuantityThunk } from '../store';
+import { changeItemQuantityThunk, removeItemThunk } from '../store';
 import Checkout from './stripeCheckout';
+import Price from './price';
 
 const Cart = props => {
   return (
@@ -11,24 +12,47 @@ const Cart = props => {
           <div key={lineItem.id} className="lineItem">
             <h3>{lineItem.product.name}</h3>
             <img src={lineItem.product.image} />
-            <p>${lineItem.price}</p>
+            <Price product={lineItem.product} />
             <label>
-              Quantity: <input type="number" placeholder={lineItem.qty} />
+              Quantity:{' '}
+              <input
+                type="number"
+                value={lineItem.qty}
+                min="1"
+                onChange={evt =>
+                  props.changeQty(props.cart.id, lineItem.id, evt.target.value)
+                }
+              />
             </label>
+            <button
+              type="button"
+              onClick={() => props.removeItem(props.cart.id, lineItem.id)}
+            >
+              Remove Item
+            </button>
           </div>
         ))}
-      <Checkout />
+      <p>TOTAL: ${props.subtotal / 100}</p>
+      <Checkout subtotal={props.subtotal} />
     </section>
   );
 };
 
 const mapStateToProps = state => ({
-  cart: state.cart
+  cart: state.cart,
+  subtotal:
+    state.cart.lineItems.reduce(
+      (currTotal, lineItem) => currTotal + lineItem.price * lineItem.qty,
+      0
+    )
 });
 
 const mapDispatchToProps = dispatch => ({
   changeQty: (orderId, lineItemId, qty) => {
     dispatch(changeItemQuantityThunk(orderId, lineItemId, qty));
+  },
+  removeItem: (orderId, lineItemId) => {
+    dispatch(removeItemThunk(orderId, lineItemId));
   }
 });
 

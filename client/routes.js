@@ -64,7 +64,7 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(me());
       dispatch(fetchProducts());
-      dispatch(fetchCategories())
+      dispatch(fetchCategories());
     }
   };
 };

@@ -1,19 +1,19 @@
 import axios from 'axios';
 
 //ACTION
-const GET_ORDERS = 'GET_ORDERS';
+const GET_MY_ORDERS = 'GET_MY_ORDERS';
 
 //ACTION CREATORS
 
-const getOrders = orders => ({ type: GET_ORDERS, orders });
+const getMyOrders = orderHistory => ({ type: GET_MY_ORDERS, orderHistory });
 
 //THUNKS
 
-export const fetchOrders = () => dispatch => {
+export const fetchMyOrders = () => dispatch => {
   axios
     .get('/api/myOrders')
     .then(res => res.data)
-    .then(foundOrders => dispatch(getOrders(foundOrders)))
+    .then(foundOrders => dispatch(getMyOrders(foundOrders)))
     .catch(console.error);
 };
 
@@ -21,8 +21,8 @@ export const fetchOrders = () => dispatch => {
 
 export default function(state = [], action) {
     switch (action.type) {
-        case GET_ORDERS:
-            return action.orders;
+        case GET_MY_ORDERS:
+            return action.orderHistory;
         default:
             return state;
     }

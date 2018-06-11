@@ -8,7 +8,7 @@ import currentProduct from './currentProduct';
 import cart from './cart';
 import categories from './categories';
 import currentCategory from './currentCategory';
-import orders from './orders';
+import orders from './orderHistory';
 import currentOrder from './currentOrder';
 
 let initState = {};
@@ -44,5 +44,5 @@ export * from './currentProduct';
 export * from './cart';
 export * from './categories';
 export * from './currentCategory';
-export * from './orders';
+export * from './orderHistory';
 export * from './currentOrder';

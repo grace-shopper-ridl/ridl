@@ -19,7 +19,7 @@ class Checkout extends React.Component {
         this.props.getMyOrders();
       })
       .then(() => {
-        history.push('/home')
+        history.push('/home');
       })
       .catch(console.error);
     // change the current order(cart) in our database from cart to created
@@ -45,7 +45,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getNewCart: userId => {
-    dispatch(getCartThunk(userId));
+    dispatch(getCartThunk(userId, {}));
   },
   getMyOrders: () => {
     dispatch(fetchMyOrders());

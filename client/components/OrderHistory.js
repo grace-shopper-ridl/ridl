@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const OrderHistory = props => {
-  console.log('hi...');
   return (
     <section id="orders">
       <h1 id="orders-header">Order History: </h1>

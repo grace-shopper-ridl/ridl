@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Ratings from './rating';
 import Price from './price';
+import NotFound from './notFound';
 import {
   fetchCurrentProduct,
   addItemThunk,
@@ -18,8 +19,8 @@ class SingleProduct extends Component {
   render() {
     const singleProduct = this.props.currentProduct;
     const cart = this.props.cart;
-    const reviews = singleProduct.reviews;
-    return (
+    const reviews = singleProduct ? singleProduct.reviews : [];
+    return singleProduct ? (
       <section id="single-product" className="product-detail">
         <h1 className="product-detail__name">{singleProduct.name}</h1>
         <Price product={singleProduct} className="product-detail__price" />
@@ -44,16 +45,19 @@ class SingleProduct extends Component {
         }
         <section id="reviews">
           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
-          {reviews && reviews.map(review => (
-            <div key={review.id} className="review">
-              <h3 className="review__title">{review.title}</h3>
-              <p className="review__descr">{review.description}</p>
-              <p>Rating:</p>
-              <Ratings rating={review.rating} />
-            </div>
-          ))}
+          {reviews &&
+            reviews.map(review => (
+              <div key={review.id} className="review">
+                <h3 className="review__title">{review.title}</h3>
+                <p className="review__descr">{review.description}</p>
+                <p>Rating:</p>
+                <Ratings rating={review.rating} />
+              </div>
+            ))}
         </section>
       </section>
+    ) : (
+      <NotFound />
     );
   }
 }

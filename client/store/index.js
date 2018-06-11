@@ -28,9 +28,11 @@ const reducer = combineReducers({
   orderHistory,
   currentOrder
 });
-const middleware = composeWithDevTools(
+
+const middleware = process.env.NODE_ENV === 'development' ? composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
-);
+) : composeWithDevTools(applyMiddleware(thunkMiddleware));
+
 const store = createStore(reducer, initState, middleware);
 
 store.subscribe(() => {

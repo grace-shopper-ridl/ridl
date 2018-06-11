@@ -36,4 +36,16 @@ Order.getCartByUser = function(userId) {
   });
 };
 
+Order.prototype.combineOrders = async function(order) {
+  const lineItems = await order.getLineItems();
+  lineItems.forEach(lineItem => this.setLineItem(lineItem));
+  return this;
+};
+
+Order.syncOrders = function(userId, orderFromStorage) {
+  const userCart = Order.getCartByUser(userId);
+  if (!userCart) orderFromStorage.setUser(userId);
+  else userCart.combineOrders(orderFromStorage);
+};
+
 module.exports = Order;

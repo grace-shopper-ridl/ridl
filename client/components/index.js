@@ -9,5 +9,6 @@ export { default as SingleProduct } from './singleProduct';
 export { default as Navbar } from './navbar';
 export { default as UserHome } from './user-home';
 export { default as Cart } from './cart';
+export { default as OrderHistory } from './OrderHistory';
 export { Login, Signup } from './auth-form';
 export { default as HomePage } from './homePage';

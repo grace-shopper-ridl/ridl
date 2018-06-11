@@ -38,6 +38,11 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
           <Link to="/signup">Sign Up</Link>
         </li>
       )}
+      {isLoggedIn && (
+        <li className="nav__item">
+          <Link to="/orderHistory">Order History</Link>
+        </li>
+      )}
       <li className="nav__item">
         <Link to="/cart">
           <i className="fa fa-shopping-cart" aria-hidden="true" />

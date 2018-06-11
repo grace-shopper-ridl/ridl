@@ -2,12 +2,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { reducer as toastr } from 'react-redux-toaster';
 import user from './user';
 import products from './allProducts';
 import currentProduct from './currentProduct';
 import cart from './cart';
 import categories from './categories';
-import currentCategory from './currentCategory'
+import currentCategory from './currentCategory';
 
 let initState = {};
 const persistedState = localStorage.getItem('reduxState');
@@ -22,7 +23,8 @@ const reducer = combineReducers({
   currentProduct,
   cart,
   categories,
-  currentCategory
+  currentCategory,
+	toastr
 });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))

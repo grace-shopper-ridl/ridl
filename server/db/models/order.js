@@ -38,22 +38,32 @@ Order.getCartByUser = function(userId) {
 
 Order.prototype.combineOrders = async function(order) {
   const lineItems = await order.getLineItems();
-  lineItems.forEach(lineItem => lineItem.setOrder(this));
-  return this;
+  await Promise.all(
+    lineItems.map(lineItem => {
+      return lineItem.setOrder(this);
+    })
+  );
+  const updated = await Order.findById(this.id, {
+    include: [
+      {
+        model: LineItem,
+        include: [Product]
+      }
+    ]
+  });
+  return updated;
 };
 
 Order.syncOrders = async function(userId, orderFromStorageId) {
   const userCart = await Order.getCartByUser(userId);
-  const storageCart = await Order.findById(orderFromStorageId, {
-    include: [{ model: LineItem }]
-  });
+  const storageCart = await Order.findById(orderFromStorageId);
   if (!userCart) {
     await storageCart.setUser(userId);
     return storageCart;
   } else {
-    await userCart.combineOrders(storageCart);
+    const updatedOrder = await userCart.combineOrders(storageCart);
     storageCart.destroy();
-    return userCart;
+    return updatedOrder;
   }
 };
 

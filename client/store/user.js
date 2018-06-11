@@ -27,7 +27,7 @@ export const me = () => dispatch =>
     .get('/auth/me')
     .then(res => {
       dispatch(getUser(res.data || defaultUser));
-      if (res.data.id) dispatch(getCartThunk(res.data.id))
+      if (res.data.id) dispatch(getCartThunk(res.data.id));
     })
     .catch(err => console.log(err));
 
@@ -36,8 +36,9 @@ export const auth = (email, password, method) => dispatch =>
     .post(`/auth/${method}`, { email, password })
     .then(
       res => {
+        let storageCart = JSON.parse(localStorage.getItem('reduxState')).cart;
         dispatch(getUser(res.data));
-        dispatch(getCartThunk(res.data.id));
+        dispatch(getCartThunk(res.data.id, storageCart));
         history.push('/home');
       },
       authError => {
@@ -52,7 +53,7 @@ export const logout = () => dispatch =>
     .post('/auth/logout')
     .then(_ => {
       dispatch(removeUser());
-      dispatch(removeCart())
+      dispatch(removeCart());
       history.push('/login');
     })
     .catch(err => console.log(err));

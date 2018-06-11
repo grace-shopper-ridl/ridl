@@ -128,7 +128,9 @@ router.delete('/:orderId/lineItems/:lineItemId', (req, res, next) => {
 // PUT /orders/:orderId/syncCart
 router.put('/:orderId/syncCart', (req, res, next) => {
   Order.syncOrders(req.body.id, req.params.orderId)
-    .then(updatedOrder => res.send(updatedOrder))
+    .then(updatedOrder => {
+      res.send(updatedOrder);
+    })
     .catch(next);
 });
 

@@ -23,11 +23,21 @@ export const removeCart = () => ({ type: REMOVE_CART });
 
 // THUNK
 
-export const getCartThunk = userId => dispatch => {
+export const getCartThunk = (userId, storageCart) => dispatch => {
   // if userId is undefined, create a new cart without a userid
-  let orderPromise = !userId
-    ? axios.post(`/api/orders`)
-    : axios.get(`/api/users/${userId}/cart`);
+  let orderPromise;
+  if (userId && storageCart.id) {
+    orderPromise = axios.put(`/api/orders/${storageCart.id}/syncCart`, {
+      id: userId
+    });
+  } else if (userId) {
+    orderPromise = axios.get(`/api/users/${userId}/cart`);
+  } else {
+    orderPromise = axios.post(`/api/orders`);
+  }
+  // let orderPromise = !userId
+  //   ? axios.post(`/api/orders`)
+  //   : axios.get(`/api/users/${userId}/cart`);
 
   orderPromise
     .then(res => res.data)

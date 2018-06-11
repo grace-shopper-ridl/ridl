@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 const db = require('../db');
 const Product = require('./product');
 const LineItem = require('./lineItem');
@@ -35,5 +36,20 @@ Order.getCartByUser = function(userId) {
     }
   });
 };
+
+Order.getOrdersByUser = function(userId) {
+  return Order.findOne({
+    where: {
+      userId,
+      status: {
+        [Op.ne]: 'cart'
+      }
+    },
+    include: {
+      model: LineItem,
+      include: [Product]
+    }
+  });
+}
 
 module.exports = Order;

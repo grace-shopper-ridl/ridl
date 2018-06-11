@@ -12,10 +12,9 @@ const App = () => {
         timeOut={4000}
         newestOnTop={false}
         preventDuplicates
-        position="top-left"
+        position="top-center"
         transitionIn="fadeIn"
-        transitionOut="fadeOut"
-        progressBar />
+        transitionOut="fadeOut" />
     </div>
   );
 };

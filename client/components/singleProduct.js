@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { toastr } from 'react-redux-toastr';
 import Ratings from './rating';
 import Price from './price';
 import {
@@ -37,6 +38,7 @@ class SingleProduct extends Component {
                 singleProduct.price,
                 1
               );
+              toastr.success('Added to cart', singleProduct.name)
             }}
           >
             Add to Cart

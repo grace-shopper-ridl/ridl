@@ -44,7 +44,7 @@ class SingleProduct extends Component {
         }
         <section id="reviews">
           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
-          {reviews.map(review => (
+          {reviews && reviews.map(review => (
             <div key={review.id} className="review">
               <h3 className="review__title">{review.title}</h3>
               <p className="review__descr">{review.description}</p>

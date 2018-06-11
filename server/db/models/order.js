@@ -38,14 +38,23 @@ Order.getCartByUser = function(userId) {
 
 Order.prototype.combineOrders = async function(order) {
   const lineItems = await order.getLineItems();
-  lineItems.forEach(lineItem => this.setLineItem(lineItem));
+  lineItems.forEach(lineItem => lineItem.setOrder(this));
   return this;
 };
 
-Order.syncOrders = function(userId, orderFromStorage) {
-  const userCart = Order.getCartByUser(userId);
-  if (!userCart) orderFromStorage.setUser(userId);
-  else userCart.combineOrders(orderFromStorage);
+Order.syncOrders = async function(userId, orderFromStorageId) {
+  const userCart = await Order.getCartByUser(userId);
+  const storageCart = await Order.findById(orderFromStorageId, {
+    include: [{ model: LineItem }]
+  });
+  if (!userCart) {
+    await storageCart.setUser(userId);
+    return storageCart;
+  } else {
+    await userCart.combineOrders(storageCart);
+    storageCart.destroy();
+    return userCart;
+  }
 };
 
 module.exports = Order;

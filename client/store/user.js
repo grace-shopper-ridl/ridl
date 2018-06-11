@@ -1,7 +1,7 @@
 import axios from 'axios';
 import history from '../history';
 import { getCartThunk, removeCart } from './cart';
-import { fetchMyOrders } from './orderHistory';
+import { fetchMyOrders, removeOrderHistory } from './orderHistory';
 /**
  * ACTION TYPES
  */
@@ -57,6 +57,7 @@ export const logout = () => dispatch =>
     .then(_ => {
       dispatch(removeUser());
       dispatch(removeCart());
+      dispatch(removeOrderHistory());
       history.push('/login');
     })
     .catch(err => console.log(err));

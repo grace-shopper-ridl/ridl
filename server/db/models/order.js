@@ -38,7 +38,7 @@ Order.getCartByUser = function(userId) {
 };
 
 Order.getOrdersByUser = function(userId) {
-  return Order.findOne({
+  return Order.findAll({
     where: {
       userId,
       status: {

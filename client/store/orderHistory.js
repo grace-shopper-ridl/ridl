@@ -22,7 +22,7 @@ export const fetchMyOrders = () => dispatch => {
 export default function(state = [], action) {
     switch (action.type) {
         case GET_MY_ORDERS:
-            return action.orderHistory;
+            return action.orderHistory || [];
         default:
             return state;
     }

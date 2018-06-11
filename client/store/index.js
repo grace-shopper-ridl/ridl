@@ -8,7 +8,7 @@ import currentProduct from './currentProduct';
 import cart from './cart';
 import categories from './categories';
 import currentCategory from './currentCategory';
-import orders from './orderHistory';
+import orderHistory from './orderHistory';
 import currentOrder from './currentOrder';
 
 let initState = {};
@@ -25,7 +25,7 @@ const reducer = combineReducers({
   cart,
   categories,
   currentCategory,
-  orders,
+  orderHistory,
   currentOrder
 });
 const middleware = composeWithDevTools(

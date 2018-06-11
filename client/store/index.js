@@ -9,6 +9,8 @@ import currentProduct from './currentProduct';
 import cart from './cart';
 import categories from './categories';
 import currentCategory from './currentCategory';
+import orderHistory from './orderHistory';
+import currentOrder from './currentOrder';
 
 let initState = {};
 const persistedState = localStorage.getItem('reduxState');
@@ -24,7 +26,9 @@ const reducer = combineReducers({
   cart,
   categories,
   currentCategory,
-  toastr
+  toastr,
+  orderHistory,
+  currentOrder
 });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
@@ -42,3 +46,5 @@ export * from './currentProduct';
 export * from './cart';
 export * from './categories';
 export * from './currentCategory';
+export * from './orderHistory';
+export * from './currentOrder';

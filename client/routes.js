@@ -8,6 +8,7 @@ import {
   UserHome,
   AllProducts,
   SingleProduct,
+  OrderHistory,
   Cart,
 	HomePage
 } from './components';
@@ -37,6 +38,7 @@ class Routes extends Component {
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
             <Route path="/cart" component={Cart} />
+            <Route path="/orderHistory" component={OrderHistory} />
           </Switch>
         )}
         {/* Displays our HomePage component as a fallback */}
@@ -62,7 +64,7 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(me());
       dispatch(fetchProducts());
-      dispatch(fetchCategories())
+      dispatch(fetchCategories());
     }
   };
 };

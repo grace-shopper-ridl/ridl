@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Ratings from './rating';
 import Price from './price';
 import NotFound from './notFound';
+import AddReview from './addReview'
 import {
   fetchCurrentProduct,
   addItemThunk,
@@ -45,6 +46,7 @@ class SingleProduct extends Component {
         }
         <section id="reviews">
           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
+          {this.props.isLoggedIn && <AddReview />}
           {reviews &&
             reviews.map(review => (
               <div key={review.id} className="review">
@@ -74,11 +76,11 @@ const mapDispatchToProps = dispatch => ({
   },
   addItemToCart: (lineItems, orderId, productId, price, qty) => {
     let alreadyExistingLineItem = lineItems.find(
-      element => element.productId === productId
+      element => element.productId === productId // checks to see if lineItem is already in cart
     );
-    if (!alreadyExistingLineItem) {
+    if (!alreadyExistingLineItem) { // if not, add it to cart
       dispatch(addItemThunk(orderId, productId, price, qty));
-    } else {
+    } else { //if so, change quantity of item in cart
       dispatch(
         changeItemQuantityThunk(
           orderId,

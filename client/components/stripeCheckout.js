@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
-import { getCartThunk } from '../store';
+import { getCartThunk, fetchMyOrders } from '../store';
 import history from '../history';
 
 class Checkout extends React.Component {
@@ -16,7 +16,10 @@ class Checkout extends React.Component {
         this.props.getNewCart(this.props.user.id); // gets new cart after changing status to created
       })
       .then(() => {
-        history.push('/home')
+        this.props.getMyOrders();
+      })
+      .then(() => {
+        history.push('/home');
       })
       .catch(console.error);
     // change the current order(cart) in our database from cart to created
@@ -42,7 +45,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getNewCart: userId => {
-    dispatch(getCartThunk(userId));
+    dispatch(getCartThunk(userId, {}));
+  },
+  getMyOrders: () => {
+    dispatch(fetchMyOrders());
   }
 });
 

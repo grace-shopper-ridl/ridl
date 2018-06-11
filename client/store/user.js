@@ -1,7 +1,7 @@
 import axios from 'axios';
 import history from '../history';
 import { getCartThunk, removeCart } from './cart';
-
+import { fetchMyOrders, removeOrderHistory } from './orderHistory';
 /**
  * ACTION TYPES
  */
@@ -27,7 +27,10 @@ export const me = () => dispatch =>
     .get('/auth/me')
     .then(res => {
       dispatch(getUser(res.data || defaultUser));
-      if (res.data.id) dispatch(getCartThunk(res.data.id));
+      if (res.data.id) {
+        dispatch(getCartThunk(res.data.id));
+        dispatch(fetchMyOrders());
+      }
     })
     .catch(err => console.log(err));
 
@@ -39,6 +42,7 @@ export const auth = (email, password, method) => dispatch =>
         let storageCart = JSON.parse(localStorage.getItem('reduxState')).cart;
         dispatch(getUser(res.data));
         dispatch(getCartThunk(res.data.id, storageCart));
+        dispatch(fetchMyOrders());
         history.push('/home');
       },
       authError => {
@@ -54,6 +58,7 @@ export const logout = () => dispatch =>
     .then(_ => {
       dispatch(removeUser());
       dispatch(removeCart());
+      dispatch(removeOrderHistory());
       history.push('/login');
     })
     .catch(err => console.log(err));

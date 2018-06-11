@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 const db = require('../db');
 const Product = require('./product');
 const LineItem = require('./lineItem');
@@ -65,6 +66,21 @@ Order.syncOrders = async function(userId, orderFromStorageId) {
     storageCart.destroy();
     return updatedOrder;
   }
+};
+
+Order.getOrdersByUser = function(userId) {
+  return Order.findAll({
+    where: {
+      userId,
+      status: {
+        [Op.ne]: 'cart'
+      }
+    },
+    include: {
+      model: LineItem,
+      include: [Product]
+    }
+  });
 };
 
 module.exports = Order;

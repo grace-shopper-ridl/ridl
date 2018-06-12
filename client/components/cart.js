@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { changeItemQuantityThunk, removeItemThunk } from '../store';
 import Checkout from './stripeCheckout';
 import Price from './price';
-import {toastr} from 'react-redux-toastr'
+import { toastr } from 'react-redux-toastr';
 
-const promoCode = 'SLEEPY XIFENG';
+const promoCode = 'SLEEPY DAN';
 
 class Cart extends Component {
   constructor(props) {
@@ -26,15 +26,19 @@ class Cart extends Component {
     evt.preventDefault();
     if (this.state.promoInput === promoCode) {
       this.setState(() => {
-        toastr.success('YOU DID IT!', 'SLEEPY XIFENG COUPON APPLIED')
-        return { matches: true, promoInput: '' }
+        toastr.success('YOU DID IT!', 'SLEEPY XIFENG COUPON APPLIED');
+        return { matches: true, promoInput: '' };
       });
-
+    } else {
+      toastr.error('WRONG CODE', 'THE PROMO CODE YOU SUBMITTED IS INVALID');
+      this.setState({promoInput: ''})
     }
   }
 
   render() {
-    let subTotal = this.state.matches ? (this.props.subtotal * 0.85) : this.props.subtotal;
+    let subTotal = this.state.matches
+      ? this.props.subtotal * 0.85
+      : this.props.subtotal;
     return (
       <section id="cart" className="cart">
         <h1 className="cart__header">

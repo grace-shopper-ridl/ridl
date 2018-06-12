@@ -11,32 +11,28 @@ class CurrentOrder extends Component {
   render() {
     const { currentOrder } = this.props;
     return (
-      <section>
-        <h2>Order Number #{currentOrder.id}</h2>
-        <h3>Status: {currentOrder.status}</h3>
-        <h3>Date Created: {new Date(currentOrder.createdAt).toDateString()}</h3>
+      <section className="cart">
+        <h2 className="cart__header" >Order Number #{currentOrder.id}</h2>
+        <h3 className="cart__header">Status: {currentOrder.status}</h3>
+        <h3 className="cart__header">Date Created: {new Date(currentOrder.createdAt).toDateString()}</h3>
         {currentOrder.lineItems &&
           currentOrder.lineItems.map(lineItem => (
-            <div key={lineItem.id} className="individual-product">
+            <div key={lineItem.id} className="cart__item">
               <Link to={`/products/${lineItem.product.id}`}>
-                <h2 className="individual-product__name">
+                <h2 className="cart__item___name">
                   {lineItem.product.name}
                 </h2>
               </Link>
-              <p>Subtotal: ${lineItem.qty * lineItem.price / 100}</p>
-              <p>Quantity: {lineItem.qty}</p>
-              {lineItem.product.inventory < 10 && (
-                <p className="inventory-warning">
-                  ONLY {lineItem.product.inventory} LEFT
-                </p>
-              )}
+              <p className="cart__item___price">Price: ${lineItem.price / 100}</p>
+              <p className="cart__item___price">Quantity: {lineItem.qty}</p>
+              <p className="cart__item___price">Subtotal: ${lineItem.qty * lineItem.price / 100}</p>
               <img
-                className="individual-product__img"
+                className="cart__item___img"
                 src={lineItem.product.image}
               />
             </div>
           ))}
-          <h2>Total: ${currentOrder.subTotal / 100}</h2>
+          <h2>Total: ${(currentOrder.subTotal / 100).toFixed(2)}</h2>
       </section>
     );
   }

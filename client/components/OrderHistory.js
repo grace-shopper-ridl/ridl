@@ -14,7 +14,7 @@ const OrderHistory = props => {
                 <h2 className="individual-order__id">Order Number #{order.id}</h2>
               </Link>
               <h3>Status: {order.status}</h3>
-              <p>${order.subTotal / 100}</p>
+              <p>${(order.subTotal / 100).toFixed(2)}</p>
             </div>
           );
         })}

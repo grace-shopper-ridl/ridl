@@ -3,6 +3,10 @@ const { User, Order } = require('../db/models');
 module.exports = router;
 
 router.get('/', (req, res, next) => {
+  if (!req.user || !req.user.isAdmin) {
+    res.status(403).json('FORBIDDEN');
+    return;
+  }
   User.findAll({
     // explicitly select only the id and email fields - even though
     // users' passwords are encrypted, it won't help if we just

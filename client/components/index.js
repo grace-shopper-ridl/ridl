@@ -12,3 +12,4 @@ export { default as Cart } from './cart';
 export { default as OrderHistory } from './OrderHistory';
 export { Login, Signup } from './auth-form';
 export { default as HomePage } from './homePage';
+export {default as CurrentOrder} from './currentOrder'

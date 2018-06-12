@@ -40,7 +40,7 @@ class Routes extends Component {
             <Route path="/home" component={UserHome} />
             <Route path="/cart" component={Cart} />
             <Route exact path="/orderHistory" component={OrderHistory} />
-            <Route path="/order/:orderId" component={CurrentOrder} />
+            <Route path="/orders/:orderId" component={CurrentOrder} />
           </Switch>
         )}
         {/* Displays our HomePage component as a fallback */}

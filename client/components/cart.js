@@ -26,11 +26,11 @@ class Cart extends Component {
     evt.preventDefault();
     if (this.state.promoInput === promoCode) {
       this.setState(() => {
-        toastr.success('YOU DID IT!', `${promoCode} COUPON APPLIED, YOU SAVED 15% OFF YOUR ORDER.`);
+        toastr.success('You did it!', `${promoCode} coupon applied, you saved 15% off your order.`);
         return { matches: true, promoInput: '' };
       });
     } else {
-      toastr.error('WRONG CODE', 'THE PROMO CODE YOU SUBMITTED IS INVALID');
+      toastr.error('Invalid Code', 'The promotional code you submitted is invalid.');
       this.setState({promoInput: ''})
     }
   }

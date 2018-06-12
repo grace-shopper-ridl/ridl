@@ -4,6 +4,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { getCartThunk, fetchMyOrders } from '../store';
 import history from '../history';
+import { toastr } from 'react-redux-toastr';
 
 class Checkout extends React.Component {
   onToken = token => {
@@ -13,6 +14,7 @@ class Checkout extends React.Component {
         amount: this.props.subtotal
       })
       .then(() => {
+        toastr.success('Order Submitted', 'Your emotional needs will be delivered shortly!');
         this.props.getNewCart(this.props.user.id); // gets new cart after changing status to created
       })
       .then(() => {

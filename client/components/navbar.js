@@ -13,12 +13,6 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
       <li className="nav__item">
         <Link to="/products">Wines</Link>
       </li>
-      <li className="nav__item">
-        Categories{' '}
-        <i className="fa fa-caret-down" aria-hidden="true">
-          &nbsp;
-        </i>
-      </li>
     </ul>
     <h1 className="nav__header">wine-y</h1>
     <ul className="nav__list">

@@ -349,3 +349,87 @@ label {
   font-size: 1rem;
   margin-top: 15px;
 }
+
+
+.cart {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 15px auto;
+  padding: 30px;
+	width: 80vw;
+}
+
+.cart__header {
+	font-family: 'Song Myung', serif;
+}
+
+.cart__item {
+	align-items: flex-start;
+	border-bottom: 1px solid #687198;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	height: 200px;
+	padding: 15px 0;
+	width: 100%;
+}
+
+.cart__item___name, .cart__item___quantity, .cart__item___img, .cart__item___price {
+	margin-right: 15px;
+}
+
+.cart__item___name {
+	flex: 1;
+	font-size: 1.2rem;
+}
+
+.cart__item___quantity {
+	flex: 1;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.1rem;
+	padding-top: 15px;
+}
+
+.cart__item___quantity input {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.1rem;
+	margin-left: 5px;
+	padding: 5px;
+	width: 30%;
+}
+
+.cart__item___price {
+	flex: 1;
+	text-align: center;
+}
+
+.cart__total {
+	font-size: 1.3rem;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.cart__item___img {
+	flex: 1;
+	height: auto;
+	max-width: 150px;
+}
+
+.cart__button {
+	background-color: #cd5c5c;
+	border-radius: 5px;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	margin-top: 15px;
+	padding: 5px 10px;
+	transition: all 0.35s ease;
+}
+
+.cart__button:hover {
+  box-shadow: 0 0 5px 3px rgba(169, 169, 169, 0.6);
+  z-index: 1;
+}

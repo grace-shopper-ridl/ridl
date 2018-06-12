@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { reducer as toastr } from 'react-redux-toastr';
 import user from './user';
 import products from './allProducts';
 import currentProduct from './currentProduct';
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   cart,
   categories,
   currentCategory,
+  toastr,
   orderHistory,
   currentOrder
 });

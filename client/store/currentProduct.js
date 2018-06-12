@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const GET_CURRENT_PRODUCT = 'GET_CURRENT_PRODUCT';
 const ADD_REVIEW = 'ADD_REVIEW';
+const REMOVE_CURRENT_PRODUCT = 'REMOVE_CURRENT_PRODUCT';
 
 const getCurrentProduct = currentProduct => ({
   type: GET_CURRENT_PRODUCT,
@@ -9,6 +10,8 @@ const getCurrentProduct = currentProduct => ({
 });
 
 const addReview = review => ({ type: ADD_REVIEW, review });
+
+export const removeCurrentProduct = () => ({ type: REMOVE_CURRENT_PRODUCT });
 
 // THUNK!
 export const fetchCurrentProduct = productId => dispatch => {
@@ -34,6 +37,8 @@ export default function(state = {}, action) {
       return action.currentProduct;
     case ADD_REVIEW:
       return { ...state, reviews: [...state.reviews, action.review] };
+    case REMOVE_CURRENT_PRODUCT:
+      return {};
     default:
       return state;
   }

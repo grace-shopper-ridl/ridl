@@ -39,9 +39,10 @@ export const auth = (email, password, method) => dispatch =>
     .post(`/auth/${method}`, { email, password })
     .then(
       res => {
+        let storageCart = JSON.parse(localStorage.getItem('reduxState')).cart;
         dispatch(getUser(res.data));
-        dispatch(getCartThunk(res.data.id));
-        dispatch(fetchMyOrders())
+        dispatch(getCartThunk(res.data.id, storageCart));
+        dispatch(fetchMyOrders());
         history.push('/home');
       },
       authError => {

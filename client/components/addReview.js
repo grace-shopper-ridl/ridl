@@ -29,7 +29,7 @@ class AddReview extends Component {
     const isItValid = this.state.title && this.state.description;
     return (
       <form onSubmit={this.submitHandler} className="add-review">
-			<h1 className="add-review__heading">Add a review</h1>
+      <h1 className="add-review__heading">Add a review</h1>
       <label htmlFor="title">Title your review:</label>
         <input
           id="title"
@@ -38,7 +38,7 @@ class AddReview extends Component {
           value={this.state.title}
           onChange={this.changeHandler}
         />
-			<label htmlFor="description">Describe your purchase:</label>
+      <label htmlFor="description">Describe your purchase:</label>
         <textarea
           id="description"
           type="text"
@@ -46,7 +46,7 @@ class AddReview extends Component {
           value={this.state.description}
           onChange={this.changeHandler}
         />
-			<label htmlFor="rating">Rate your purchase:</label>
+      <label htmlFor="rating">Rate your purchase:</label>
         <select id="rating" onChange={this.changeHandler} name="rating" value={this.state.rating} >
           <option value={1}>1</option>
           <option value={2}>2</option>

@@ -28,8 +28,9 @@ class AddReview extends Component {
   render() {
     const isItValid = this.state.title && this.state.description;
     return (
-      <form onSubmit={this.submitHandler}>
-      <label htmlFor="title">Title: </label>
+      <form onSubmit={this.submitHandler} className="add-review">
+			<h1 className="add-review__heading">Add a review</h1>
+      <label htmlFor="title">Title your review:</label>
         <input
           id="title"
           type="text"
@@ -37,15 +38,15 @@ class AddReview extends Component {
           value={this.state.title}
           onChange={this.changeHandler}
         />
-        <label htmlFor="description">Description: </label>
-        <input
+			<label htmlFor="description">Describe your purchase:</label>
+        <textarea
           id="description"
           type="text"
           name="description"
           value={this.state.description}
           onChange={this.changeHandler}
         />
-        <label htmlFor="rating">Rating: </label>
+			<label htmlFor="rating">Rate your purchase:</label>
         <select id="rating" onChange={this.changeHandler} name="rating" value={this.state.rating} >
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -53,7 +54,7 @@ class AddReview extends Component {
           <option value={4}>4</option>
           <option value={5}>5</option>
         </select>
-        <input type="submit" value="Submit" disabled={!isItValid} />
+        <button className="add-review__button" type="submit" disabled={!isItValid}>Submit</button>
       </form>
     );
   }

@@ -8,9 +8,17 @@ class AllProducts extends Component {
     super(props);
     this.state = { query: '' };
     this.handleChange = this.handleChange.bind(this);
+    this.hasCategories = this.hasCategories.bind(this);
   }
   handleChange(event) {
     this.setState({ query: event.target.value });
+  }
+
+  hasCategories(categories, query) {
+    return (
+      categories.filter(category => category.type.toLowerCase().includes(query))
+        .length > 0
+    );
   }
 
   render() {
@@ -24,21 +32,32 @@ class AllProducts extends Component {
           className="search"
           name="query"
           type="text"
-          placeholder="Search Wines by Name"
+          placeholder="Search Wines by Name or Type"
           value={this.state.query}
           onChange={this.handleChange}
         />
-      <h1 id="products-header">Wines:</h1>
+        <h1 id="products-header">Wines:</h1>
         {products
-          .filter(product => product.name.toLowerCase().includes(query))
+          .filter(
+            product =>
+              product.name.toLowerCase().includes(query) ||
+              this.hasCategories(product.categories, query)
+          )
           .map(product => {
             return (
               <div key={product.id} className="individual-product">
                 <Link to={`/products/${product.id}`}>
                   <h2 className="individual-product__name">{product.name}</h2>
                 </Link>
-                <Price product={product} className="individual-product__price" />
-                {product.inventory < 10 && <p className="inventory-warning">ONLY {product.inventory} LEFT</p>}
+                <Price
+                  product={product}
+                  className="individual-product__price"
+                />
+                {product.inventory < 10 && (
+                  <p className="inventory-warning">
+                    ONLY {product.inventory} LEFT
+                  </p>
+                )}
                 <img className="individual-product__img" src={product.image} />
               </div>
             );

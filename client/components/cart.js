@@ -79,16 +79,17 @@ class Cart extends Component {
               </button>
             </div>
           ))}
-        <form onSubmit={this.submitHandler}>
-          <label htmlFor="promo-code">Insert Promo Code: </label>
-          <input
-            id="promo-code"
-            type="text"
-            value={this.state.promoInput}
-            onChange={this.changeHandler}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        {this.props.cart.lineItems.length &&
+          (<form onSubmit={this.submitHandler}>
+            <label htmlFor="promo-code">Insert Promo Code: </label>
+            <input
+              id="promo-code"
+              type="text"
+              value={this.state.promoInput}
+              onChange={this.changeHandler}
+            />
+            <button type="submit">Submit</button>
+           </form>)}
         <p className="cart__total">Total: ${(subTotal / 100).toFixed(2)}</p>
         <Checkout subtotal={subTotal} />
       </section>

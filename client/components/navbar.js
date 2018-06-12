@@ -34,7 +34,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
       )}
       {isLoggedIn && (
         <li className="nav__item">
-          <Link to="/orderHistory">Order History</Link>
+          <Link to="/order-history">Order History</Link>
         </li>
       )}
       <li className="nav__item">

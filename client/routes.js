@@ -39,7 +39,7 @@ class Routes extends Component {
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
             <Route path="/cart" component={Cart} />
-            <Route exact path="/orderHistory" component={OrderHistory} />
+            <Route exact path="/order-history" component={OrderHistory} />
             <Route path="/orders/:orderId" component={CurrentOrder} />
           </Switch>
         )}

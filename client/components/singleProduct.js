@@ -51,6 +51,7 @@ class SingleProduct extends Component {
         }
         <section id="reviews">
           <h2 className="review__heading">Reviews of {singleProduct.name}:</h2>
+					{reviews && reviews.length === 0 && <p>There are no reviews yet.</p>}
           {this.props.isLoggedIn && <AddReview />}
           {reviews &&
             reviews.map(review => (

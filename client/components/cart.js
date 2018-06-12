@@ -26,11 +26,11 @@ export class Cart extends Component {
     evt.preventDefault();
     if (this.state.promoInput === promoCode) {
       this.setState(() => {
-        toastr.success('YOU DID IT!', `${promoCode} COUPON APPLIED, YOU SAVED 15% OFF YOUR ORDER.`);
+        toastr.success('You did it!', `${promoCode} coupon applied, you saved 15% off your order.`);
         return { matches: true, promoInput: '' };
       });
     } else {
-      toastr.error('WRONG CODE', 'THE PROMO CODE YOU SUBMITTED IS INVALID');
+      toastr.error('Invalid Code', 'The promotional code you submitted is invalid.');
       this.setState({promoInput: ''})
     }
   }
@@ -79,16 +79,17 @@ export class Cart extends Component {
               </button>
             </div>
           ))}
-        <form onSubmit={this.submitHandler}>
-          <label htmlFor="promo-code">Insert Promo Code: </label>
-          <input
-            id="promo-code"
-            type="text"
-            value={this.state.promoInput}
-            onChange={this.changeHandler}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        {this.props.cart.lineItems.length &&
+          (<form onSubmit={this.submitHandler}>
+            <label htmlFor="promo-code">Insert Promo Code: </label>
+            <input
+              id="promo-code"
+              type="text"
+              value={this.state.promoInput}
+              onChange={this.changeHandler}
+            />
+            <button type="submit">Submit</button>
+           </form>)}
         <p className="cart__total">Total: ${(subTotal / 100).toFixed(2)}</p>
         <Checkout subtotal={subTotal} />
       </section>

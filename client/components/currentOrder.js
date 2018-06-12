@@ -32,7 +32,7 @@ class CurrentOrder extends Component {
               <p className="cart__item___price">Subtotal: ${lineItem.qty * lineItem.price / 100}</p>
             </div>
           ))}
-          <h2>Total: ${(currentOrder.subTotal / 100).toFixed(2)}</h2>
+          <p className="cart__total">Total: ${(currentOrder.subTotal / 100).toFixed(2)}</p>
       </section>
     );
   }

@@ -26,7 +26,7 @@ describe('Product routes', () => {
     ];
 
     beforeEach(() => {
-      Product.bulkCreate(products)
+      Product.create(products[0]).then(Product.create(products[1]))
         .then(() => Product.findAll())
         .then(created => {
           products[1].id = created[1].id;
@@ -40,13 +40,12 @@ describe('Product routes', () => {
         .then(res => {
           expect(res.body).to.be.an('array');
           expect(res.body.length).to.equal(2);
-          expect(res.body[0].name).to.equal('Bordeaux');
         });
     });
 
-    it(`GET /api/products/${products[1].id}`, () => {
+    it(`GET /api/products/2`, () => {
       return request(app)
-        .get(`/api/products/${products[1].id}`)
+        .get(`/api/products/2`)
         .expect(200)
         .then(res => {
           expect(res.body).to.be.an('object');

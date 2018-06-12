@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react';
 import enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Cart from './cart';
+import { Cart } from './cart';
 
 const adapter = new Adapter();
 enzyme.configure({ adapter });
@@ -92,7 +92,7 @@ describe('Cart', () => {
     testCart = shallow(<Cart cart={cartProp} />);
   });
   it('to have 3 lineItem divs', () => {
-    expect(testCart.find('div.lineItem')).to.have.length(3);
+    expect(testCart.find('div.cart__item')).to.have.length(3);
   });
 
 });

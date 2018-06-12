@@ -7,7 +7,7 @@ import { toastr } from 'react-redux-toastr';
 
 const promoCode = 'SLEEPY DAN';
 
-class Cart extends Component {
+export class Cart extends Component {
   constructor(props) {
     super(props);
     this.state = {

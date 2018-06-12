@@ -30,7 +30,7 @@ router.post('/:productId/reviews', (req, res, next) => {
         review => review.setProduct(product)
       );
     })
-    .then(updated => res.json(updated))
+    .then(updated => res.status(201).json(updated))
     .catch(next);
 });
 

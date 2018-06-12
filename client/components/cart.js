@@ -26,7 +26,7 @@ class Cart extends Component {
     evt.preventDefault();
     if (this.state.promoInput === promoCode) {
       this.setState(() => {
-        toastr.success('YOU DID IT!', `${promoCode} COUPON APPLIED`);
+        toastr.success('YOU DID IT!', `${promoCode} COUPON APPLIED, YOU SAVED 15% OFF YOUR ORDER.`);
         return { matches: true, promoInput: '' };
       });
     } else {

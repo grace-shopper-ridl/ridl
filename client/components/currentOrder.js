@@ -18,6 +18,10 @@ class CurrentOrder extends Component {
         {currentOrder.lineItems &&
           currentOrder.lineItems.map(lineItem => (
             <div key={lineItem.id} className="cart__item">
+            <img
+              className="cart__item___img"
+              src={lineItem.product.image}
+            />
               <Link to={`/products/${lineItem.product.id}`}>
                 <h2 className="cart__item___name">
                   {lineItem.product.name}
@@ -26,10 +30,6 @@ class CurrentOrder extends Component {
               <p className="cart__item___price">Price: ${lineItem.price / 100}</p>
               <p className="cart__item___price">Quantity: {lineItem.qty}</p>
               <p className="cart__item___price">Subtotal: ${lineItem.qty * lineItem.price / 100}</p>
-              <img
-                className="cart__item___img"
-                src={lineItem.product.image}
-              />
             </div>
           ))}
           <h2>Total: ${(currentOrder.subTotal / 100).toFixed(2)}</h2>

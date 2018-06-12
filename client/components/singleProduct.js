@@ -4,7 +4,7 @@ import { toastr } from 'react-redux-toastr';
 import Ratings from './rating';
 import Price from './price';
 import NotFound from './notFound';
-import AddReview from './addReview'
+import AddReview from './addReview';
 import {
   fetchCurrentProduct,
   addItemThunk,
@@ -43,7 +43,7 @@ class SingleProduct extends Component {
                 singleProduct.price,
                 1
               );
-              toastr.success('Added to cart', singleProduct.name)
+              toastr.success('Added to cart', singleProduct.name);
             }}
           >
             Add to Cart
@@ -83,9 +83,11 @@ const mapDispatchToProps = dispatch => ({
     let alreadyExistingLineItem = lineItems.find(
       element => element.productId === productId // checks to see if lineItem is already in cart
     );
-    if (!alreadyExistingLineItem) { // if not, add it to cart
+    if (!alreadyExistingLineItem) {
+      // if not, add it to cart
       dispatch(addItemThunk(orderId, productId, price, qty));
-    } else { //if so, change quantity of item in cart
+    } else {
+      //if so, change quantity of item in cart
       dispatch(
         changeItemQuantityThunk(
           orderId,
@@ -96,7 +98,7 @@ const mapDispatchToProps = dispatch => ({
     }
   },
   createUnauthCart: () => {
-    let cart = JSON.parse(localStorage.getItem('reduxState')).cart.id;
+    let cart = JSON.parse(localStorage.getItem('redux')).cart.id;
     if (!cart) dispatch(getCartThunk(null, {}));
   },
   removeCurrentProduct: () => {

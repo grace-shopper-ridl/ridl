@@ -9,7 +9,8 @@ import {
   fetchCurrentProduct,
   addItemThunk,
   changeItemQuantityThunk,
-  getCartThunk
+  getCartThunk,
+  removeCurrentProduct
 } from '../store';
 
 class SingleProduct extends Component {
@@ -17,7 +18,9 @@ class SingleProduct extends Component {
     this.props.setCurrentProduct(this.props.match.params.productId);
     this.props.createUnauthCart();
   }
-
+  componentWillUnmount() {
+    this.props.removeCurrentProduct();
+  }
   render() {
     const singleProduct = this.props.currentProduct;
     const cart = this.props.cart;
@@ -95,6 +98,9 @@ const mapDispatchToProps = dispatch => ({
   createUnauthCart: () => {
     let cart = JSON.parse(localStorage.getItem('reduxState')).cart.id;
     if (!cart) dispatch(getCartThunk(null, {}));
+  },
+  removeCurrentProduct: () => {
+    dispatch(removeCurrentProduct())
   }
 });
 

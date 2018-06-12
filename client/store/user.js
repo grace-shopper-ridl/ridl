@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toastr } from 'react-redux-toastr'
 import history from '../history';
 import { getCartThunk, removeCart } from './cart';
 import { fetchMyOrders, removeOrderHistory } from './orderHistory';
@@ -43,7 +44,8 @@ export const auth = (email, password, method) => dispatch =>
         dispatch(getUser(res.data));
         dispatch(getCartThunk(res.data.id, storageCart));
         dispatch(fetchMyOrders());
-        history.push('/home');
+        history.push('/');
+        toastr.success(`Welcome ${res.data.email}`, 'Start wine-ing!')
       },
       authError => {
         // rare example: a good use case for parallel (non-catch) error handler

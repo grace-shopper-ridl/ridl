@@ -11,7 +11,7 @@ import {
   OrderHistory,
   Cart,
   CurrentOrder,
-	HomePage
+  HomePage
 } from './components';
 import { me, fetchProducts, fetchCategories } from './store';
 
@@ -34,10 +34,11 @@ class Routes extends Component {
         <Route exact path="/products" component={AllProducts} />
         <Route path="/products/:productId" component={SingleProduct} />
         <Route path="/cart" component={Cart} />
+        <Route path="/home" component={HomePage} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={UserHome} />
+            <Route exact path="/" component={HomePage} />
             <Route path="/cart" component={Cart} />
             <Route exact path="/orderHistory" component={OrderHistory} />
             <Route path="/orders/:orderId" component={CurrentOrder} />

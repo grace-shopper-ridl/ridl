@@ -52,10 +52,5 @@ describe('Product routes', () => {
           expect(res.body.name).to.equal('Pinot Grigio');
         });
     });
-
-    // it(`POST /api/products/${products[1].id}/reviews`, () => {
-    //   return request(app)
-    //     .post(`api/products/${products[1].id}`)
-    // });
   });
 });

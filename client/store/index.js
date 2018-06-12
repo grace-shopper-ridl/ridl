@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import persistState from 'redux-localstorage';
 import { reducer as toastr } from 'react-redux-toastr';
 import user from './user';
 import products from './allProducts';
@@ -11,13 +12,6 @@ import categories from './categories';
 import currentCategory from './currentCategory';
 import orderHistory from './orderHistory';
 import currentOrder from './currentOrder';
-
-let initState = {};
-const persistedState = localStorage.getItem('reduxState');
-
-if (persistedState) {
-  initState = JSON.parse(persistedState);
-}
 
 const reducer = combineReducers({
   user,
@@ -31,13 +25,10 @@ const reducer = combineReducers({
   currentOrder
 });
 const middleware = composeWithDevTools(
-  applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
+  applyMiddleware(thunkMiddleware, createLogger({ collapsed: true })),
+  persistState('cart')
 );
-const store = createStore(reducer, initState, middleware);
-
-store.subscribe(() => {
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
-});
+const store = createStore(reducer, middleware);
 
 export default store;
 export * from './user';

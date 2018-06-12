@@ -92,7 +92,7 @@ const mapDispatchToProps = dispatch => ({
   },
   createUnauthCart: () => {
     let cart = JSON.parse(localStorage.getItem('reduxState')).cart.id;
-    if (!cart) dispatch(getCartThunk());
+    if (!cart) dispatch(getCartThunk(null, {}));
   }
 });
 

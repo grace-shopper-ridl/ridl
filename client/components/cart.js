@@ -26,7 +26,7 @@ class Cart extends Component {
     evt.preventDefault();
     if (this.state.promoInput === promoCode) {
       this.setState(() => {
-        toastr.success('YOU DID IT!', 'SLEEPY XIFENG COUPON APPLIED');
+        toastr.success('YOU DID IT!', `${promoCode} COUPON APPLIED`);
         return { matches: true, promoInput: '' };
       });
     } else {

@@ -24,10 +24,18 @@ const reducer = combineReducers({
   orderHistory,
   currentOrder
 });
-const middleware = composeWithDevTools(
-  applyMiddleware(thunkMiddleware, createLogger({ collapsed: true })),
-  persistState('cart')
-);
+
+const middleware =
+  process.env.NODE_ENV === 'development'
+    ? composeWithDevTools(
+        applyMiddleware(thunkMiddleware, createLogger({ collapsed: true })),
+        persistState('cart')
+      )
+    : composeWithDevTools(
+        applyMiddleware(thunkMiddleware),
+        persistState('cart')
+      );
+
 const store = createStore(reducer, middleware);
 
 export default store;

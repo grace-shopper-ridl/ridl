@@ -28,7 +28,7 @@ export const me = () => dispatch =>
     .then(res => {
       dispatch(getUser(res.data || defaultUser));
       if (res.data.id) {
-        dispatch(getCartThunk(res.data.id));
+        dispatch(getCartThunk(res.data.id, {}));
         dispatch(fetchMyOrders());
       }
     })
